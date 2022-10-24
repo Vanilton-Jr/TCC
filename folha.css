@@ -1,0 +1,174 @@
+body{
+    background-color: #000 ;
+    color: #fff;
+    font-family:   Calibri, 'Trebuchet MS', sans-serif
+}
+button, .button{
+    cursor: pointer;
+}
+
+#butt{
+    width: 200px;
+    height: 200px;
+}
+
+.hide{
+    display: none;
+    visibility: hidden;
+}
+
+/* Barra de Navegação */
+#nav_butt{
+    position: fixed;
+    background-color: aliceblue;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    left: 1vw;
+    top: 1vw;
+    text-align: center;
+}
+
+#barra{
+    position: relative;
+    top: -0.2vw;
+}
+
+/* header */
+#header{
+    position: relative;
+    width: 101.55%;
+    height: 20vw;
+    top: -1vw;
+    left: -1vw;
+    right: -2vw;
+    background-color: #e0a555 ;
+    /* border-bottom-right-radius: 100%;
+    border-bottom-l
+    eft-radius: 100%; */
+}
+
+#perfil{
+    position: absolute;
+    width: 14vw;
+    height: 14vw;
+    background-color: grey;
+    z-index: 2;
+    top: 5vw;
+    left: 43%;
+    border-radius: 100%;
+}
+
+#test{
+    position: absolute;
+    width: 9vw;
+    height: 2vw;
+    background-color: #fff;
+    top: 5vw;
+    left: 10vw;
+    color: #000;
+}
+
+/* barra de menssagem */
+#barra_menssagem{
+    width: 50vw;
+    height: 1.5vw;
+    border-radius: 10px;
+    bottom: 3vw;
+    border: none;
+    outline: none;
+    color: #000;
+    border: 1px solid black;
+    padding-left: 1vw
+}
+
+#Barra_button{
+    position: fixed;
+    z-index: 3;
+    left: 25vw;
+    width: 55vw;
+    height: 1.5vw;
+    border-radius: 10px;
+    bottom: 3vw;
+}
+
+#enviar{
+    background-color: transparent;
+    color:#FFC300;
+    border: none;
+    outline: none;
+    transform: rotate(180deg);
+    transform: scale(1.7);
+    align-self: baseline;
+}
+
+
+#color_pick{
+    position: absolute;
+    top: 10vw;
+    outline: none;
+    border: none;
+}
+/* menssagens ----------------------------------------------*/
+#corpo{
+    margin-bottom: 11vw;
+}
+
+.mensagem{
+    width: 17vw;
+    height: 7vw; 
+    font-size: 0.85em;
+    line-height: 1.6em;  
+    border-radius: 20px;
+    height: auto;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    margin-top: 30px;
+    word-break: break-all;
+    mix-blend-mode: isolation;
+}
+
+.cliente{
+    left: 65vw;
+    border-top-right-radius: 0;
+    animation: expandir 1s forwards 0s ;
+}
+
+.empresa{
+    background-color: rgb(112, 173, 231) !important;
+    left: 7vw;
+    border-top-left-radius: 0;
+    animation: expandir 1s forwards 1s ;
+    visibility: hidden;
+}
+
+.area_tempo{
+    font-size: 1vw;
+    color: rgb(38, 38, 38);
+    width: fit-content;
+    height: 1vw;
+}
+
+.cliente > .area_tempo{
+    float: right;
+}
+.empresa > .area_tempo{
+    float: left;
+}
+
+ @keyframes expandir {
+    from{
+        height: 1.5vw;
+        width: 0;
+        font-display: none;
+    }
+
+    to{
+        content-visibility: hidden !important;
+        width: 17vw;
+        visibility: visible; 
+        font-display: none;   
+    }
+}

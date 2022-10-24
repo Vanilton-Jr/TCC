@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d64eeea4e.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="folha.css">
+    <title> Bot </title>
+</head>
+
+<body onload="cores()">
+
+<div id="header">
+    <input type="color" id="color_pick" value="#FFC300" onchange="cores()"/>
+    <div id="test" class="clientes hide" onclick="cores()"><p id="test_txt" ></p></div>
+
+     <div id="perfil" ></div> 
+     <div id="nav_butt" class="button">
+        <a href="config.html" target="_blank"> <p id="barra"> <i class="fa-solid fa-bars"></i></p></a>
+     </div>
+</div>
+
+<div id="corpo">
+</div>
+
+
+<div id="Barra_button">
+<input type="text" id="barra_menssagem" autofocus="autofocus" onfocus="this.select()"> <button id="enviar"  onclick="adMens('cliente')" type="submit"> <i class="fa-solid fa-paper-plane"></i></button>
+</div>
+</body>
+
+</html>
