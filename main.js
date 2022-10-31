@@ -58,7 +58,7 @@ function adMens(remetente, conteudo) {// Create element:
 
     window.scroll({ top: 10000000, left: 0, behavior: 'smooth' })
 
-    msg.value = "";
+    msg.value =  "";
     corpo.appendChild(mensagem_Cli);
     cores()// aciona a função cores
 }
