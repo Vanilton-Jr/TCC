@@ -87,24 +87,24 @@ function criarPergunta(i) {
 let hoje = "hoje tem"
 let teste = "test"
 
-const respostas = ["oshi", "testado bão sô"]
+const respostas = ["oshi", "testado bão"]
 
-const perguntas = ["hoje tem", "palhaçada", "test"]
+const perguntas = ["hoje tem", "test", "palhaçada"]
 
 function pegarResposta(msg) {
     var Resposta;
-    switch (msg) {
-        case perguntas[0]:
-            Resposta = new Date().toDateString();
-            break;
-        case "ontem":
-            Resposta = new Date().toDateString();
-            break;
-        case teste:
-            Resposta = respostas[1];
-            break;
+    let i = 0;
+    while (`${perguntas[i]}` != `${msg}`) {
+        i++;
+    }
+    if (`${perguntas[i]}` == `${msg}`) {
+        switch (msg) {
+            case perguntas[i]:
+                Resposta = respostas[i];
+                break;
 
-        default: Resposta = "Tente outra pergunta";
+            default: Resposta = "Tente outra pergunta";
+        }
     }
     return Resposta;
 }
