@@ -87,23 +87,36 @@ function criarPergunta(i) {
 let hoje = "hoje tem"
 let teste = "test"
 
-const respostas = ["oshi", "testado bão"]
-
+const respostas = ["oshi", "testado bão", "palhaçada"]
 const perguntas = ["hoje tem", "test", "palhaçada"]
+
+
+
+function NovoQuest(){
+    let pergunta = document.getElementById("pergunta").value;
+    let resposta = document.getElementById("resposta").value;
+    perguntas.push(pergunta);
+    respostas.push(resposta);
+    console.log(perguntas);
+    console.log(respostas);
+}
 
 function pegarResposta(msg) {
     var Resposta;
-    let i = 0;
-    while (`${perguntas[i]}` != `${msg}`) {
+    let i = -1;
+    while (i < 100) {
         i++;
-    }
-    if (`${perguntas[i]}` == `${msg}`) {
-        switch (msg) {
-            case perguntas[i]:
-                Resposta = respostas[i];
-                break;
+        if (`${perguntas[i]}` == `${msg}`) {
+            switch (msg) {
+                case perguntas[i]:
+                    Resposta = respostas[i];
+                    break;
 
-            default: Resposta = "Tente outra pergunta";
+                default: Resposta = "Tente outra pergunta";
+            }
+        }
+        if (typeof Resposta === "undefined") {
+            Resposta = "Tente outra pergunta";
         }
     }
     return Resposta;
