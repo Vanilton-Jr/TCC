@@ -92,13 +92,32 @@ const perguntas = ["hoje tem", "test", "palhaçada"]
 
 
 
-function NovoQuest(){
+function NovoQuest() {
     let pergunta = document.getElementById("pergunta").value;
     let resposta = document.getElementById("resposta").value;
     perguntas.push(pergunta);
     respostas.push(resposta);
     console.log(perguntas);
     console.log(respostas);
+}
+
+
+function perguntaNreconhecida() {
+    var chave = Math.floor((Math.random() * 5) + 1);
+    var res = "";
+    switch (chave) {
+        case 1: res = "Tente outra pergunta"
+            break;
+        case 2: res = "Desculpe não entendi"
+            break;
+        case 3: res = "Sabe escrever não oh"
+            break;
+        case 4: res = "burro?"
+            break;
+            case 5: res = "Não entendi a pergunta"
+            break;
+        }
+        return res;
 }
 
 function pegarResposta(msg) {
@@ -116,7 +135,7 @@ function pegarResposta(msg) {
             }
         }
         if (typeof Resposta === "undefined") {
-            Resposta = "Tente outra pergunta";
+            Resposta = perguntaNreconhecida();
         }
     }
     return Resposta;
