@@ -119,20 +119,13 @@ function perguntaNreconhecida() {
         }
         return res;
 }
-
 function pegarResposta(msg) {
     var Resposta;
     let i = -1;
-    while (i < 100) {
+    while (i < respostas.length - 1) {
         i++;
-        if (`${perguntas[i]}` == `${msg}`) {
-            switch (msg) {
-                case perguntas[i]:
+        if (perguntas[i].toUpperCase() == msg.toUpperCase()) {
                     Resposta = respostas[i];
-                    break;
-
-                default: Resposta = "Tente outra pergunta";
-            }
         }
         if (typeof Resposta === "undefined") {
             Resposta = perguntaNreconhecida();
