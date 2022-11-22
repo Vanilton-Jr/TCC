@@ -3,15 +3,28 @@ var id_A = 0;
 var id_Atual = id_A * 1;
 var chave = 1;
 
-
 function cores() {
-    var test = document.getElementById("test_txt");
     var color = document.getElementById("color_pick");
+    var test = document.getElementById("test_txt");
+    var fundo = document.getElementsByClassName("fundos");
     var msg = document.getElementsByClassName("cliente");
 
-    for (var i = 0; i < msg.length; i++) {
-        msg[i].style.backgroundColor = color.value;
+    for (var i = 0; i < fundo.length; i++) {
+        fundo[i].style.backgroundColor = color.value;
+        fundo[i].classList.add("fundos_ativado");
     }
+    setTimeout(() => {
+      for (var i = 0; i < msg.length; i++) {
+          msg[i].style.backgroundColor = color.value;
+      }
+    }, 900);
+
+     setTimeout(() => {
+         for (var i = 0; i < fundo.length; i++) {
+             fundo[i].classList.remove("fundos_ativado");
+         }
+     }, 1900);
+
 }
 
 function renderMenssagemUsuario() {
@@ -26,6 +39,7 @@ function renderMenssagemUsuario() {
         alert('Execedeu o limite de Characteres')
     }
 
+
 }
 
 function renderMenssagemEmpresa(msg_usuario) {
@@ -35,31 +49,50 @@ function renderMenssagemEmpresa(msg_usuario) {
 
 function adMens(remetente, conteudo) {// Create element:
     id_Atual++;
-
+    const menArea = document.createElement("div");
+    menArea.classList.add("menarea");
+    
+    var color = document.getElementById("color_pick");
     const corpo = document.getElementById('corpo');
     const msg = document.getElementById('barra_menssagem'); //le oque está escrito na barra
     const mensagem_Cli = document.createElement("div");//Cria o div
-
+    mensagem_Cli.style.backgroundColor = color.value;
+    
+    
     mensagem_Cli.classList.add("mensagem"); mensagem_Cli.classList.add(remetente);// adiciona a class remetente
     mensagem_Cli.setAttribute("id", `cliente${id_Atual}`);// adiciona o id cliente
-
+    
     const area_tempo = document.createElement("div");//Cria o div
+    area_tempo.classList.add("texto")
     const tempo = document.createElement("p");//Cria o div
-
+    
     var date = new Date;
     area_tempo.classList.add("area_tempo");// adiciona a class remetente
     tempo.innerText = addZero(date.getHours()) + ":" + addZero(date.getMinutes());
 
+    const area_txt = document.createElement("div");//Cria o div
+    area_txt.classList.add("texto")
+    mensagem_Cli.append(area_txt);
+    
     const Conteudo_Txt = document.createTextNode(conteudo);
-    mensagem_Cli.append(Conteudo_Txt);
-
+    area_txt.append(Conteudo_Txt);
+    
+    
     mensagem_Cli.appendChild(area_tempo);
     area_tempo.appendChild(tempo);
-
-    window.scroll({ top: 10000000, left: 0, behavior: 'smooth' })
-
+    
+    
+    if (remetente == "cliente") {
+        const fundo = document.createElement("div");
+        fundo.classList.add("fundos")
+        fundo.classList.add("cliente")
+        mensagem_Cli.append(fundo)
+    }
+    
     msg.value = "";
-    corpo.appendChild(mensagem_Cli);
+    corpo.appendChild(menArea)
+    menArea.appendChild(mensagem_Cli);
+    window.scroll({ top: 90000, left: 0, behavior: 'smooth' })
     cores()// aciona a função cores
 }
 
@@ -84,11 +117,8 @@ function criarPergunta(i) {
     console.log
 }
 
-let hoje = "hoje tem"
-let teste = "test"
-
-const respostas = ["oshi", "testado bão", "palhaçada"]
-const perguntas = ["hoje tem", "test", "palhaçada"]
+const respostas = ["oshi", "testado bão", "palhaçada",]
+const perguntas = ["hoje tem", "test", "palhaçada",]
 
 
 
@@ -114,18 +144,20 @@ function perguntaNreconhecida() {
             break;
         case 4: res = "burro?"
             break;
-            case 5: res = "Não entendi a pergunta"
+        case 5: res = "Não entendi a pergunta"
             break;
-        }
-        return res;
+    }
+    return res;
 }
+
+
 function pegarResposta(msg) {
     var Resposta;
     let i = -1;
     while (i < respostas.length - 1) {
         i++;
         if (perguntas[i].toUpperCase() == msg.toUpperCase()) {
-                    Resposta = respostas[i];
+            Resposta = respostas[i];
         }
         if (typeof Resposta === "undefined") {
             Resposta = perguntaNreconhecida();

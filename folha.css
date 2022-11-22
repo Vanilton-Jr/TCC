@@ -1,24 +1,52 @@
-body{
-    background-color: #000 ;
-    color: #fff;
-    font-family:   Calibri, 'Trebuchet MS', sans-serif
+* {
+    box-sizing: border-box;
 }
-button, .button{
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+button,
+.button {
     cursor: pointer;
 }
 
-#butt{
+#butt {
     width: 200px;
     height: 200px;
 }
 
-.hide{
+.hide {
     display: none;
     visibility: hidden;
 }
+input[type="color"]{
+    border-radius: 100%;
+    margin-left: 5vw;
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    appearance: none;
+    background-color: transparent;
+    cursor:pointer
+}
 
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+    border-radius: 100%;
+}
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+	padding: 0;
+    border-radius: 100%;
+    
+}
 /* Barra de Navegação */
-#nav_butt{
+#nav_butt {
     position: fixed;
     background-color: aliceblue;
     width: 40px;
@@ -29,26 +57,26 @@ button, .button{
     text-align: center;
 }
 
-#barra{
+#barra {
     position: relative;
     top: -0.2vw;
 }
 
 /* header */
-#header{
+#header {
     position: relative;
     width: 101.55%;
     height: 20vw;
     top: -1vw;
     left: -1vw;
     right: -2vw;
-    background-color: #e0a555 ;
+    background-color: #e0a555;
     /* border-bottom-right-radius: 100%;
     border-bottom-l
     eft-radius: 100%; */
 }
 
-#perfil{
+#perfil {
     position: absolute;
     width: 14vw;
     height: 14vw;
@@ -59,7 +87,7 @@ button, .button{
     border-radius: 100%;
 }
 
-#test{
+#test {
     position: absolute;
     width: 9vw;
     height: 2vw;
@@ -70,7 +98,7 @@ button, .button{
 }
 
 /* barra de menssagem */
-#barra_menssagem{
+#barra_menssagem {
     width: 50vw;
     height: 1.5vw;
     border-radius: 10px;
@@ -82,7 +110,7 @@ button, .button{
     padding-left: 1vw
 }
 
-#Barra_button{
+#Barra_button {
     position: fixed;
     z-index: 3;
     left: 25vw;
@@ -92,9 +120,9 @@ button, .button{
     bottom: 3vw;
 }
 
-#enviar{
+#enviar {
     background-color: transparent;
-    color:#FFC300;
+    color: #FFC300;
     border: none;
     outline: none;
     transform: rotate(180deg);
@@ -103,72 +131,145 @@ button, .button{
 }
 
 
-#color_pick{
+#color_pick {
     position: absolute;
     top: 10vw;
     outline: none;
     border: none;
 }
+
 /* menssagens ----------------------------------------------*/
-#corpo{
-    margin-bottom: 11vw;
+#corpo {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: list-item;
+    margin-bottom: 7vw;
+    overflow:hidden
 }
 
-.mensagem{
-    width: 17vw;
-    height: 7vw; 
+.menarea{
+    width: 100%;
+    height: 7vw;
+    border: #000 solid 1px;
+}
+
+.mensagem {
+    width: 2vw;
+    height: 2vw;
     font-size: 0.85em;
-    line-height: 1.6em;  
+    line-height: 1.6em;
     border-radius: 20px;
     height: auto;
+    max-height: 7vw;
+    min-height: 2vw;
     background-color: #fff;
     color: #000;
     padding: 20px;
     position: relative;
     margin-top: 30px;
+    margin-right: 10vw;
     word-break: break-all;
     mix-blend-mode: isolation;
+    transition: 1s;
 }
 
-.cliente{
-    left: 65vw;
+.cliente {
     border-top-right-radius: 0;
-    animation: expandir 1s forwards 0s ;
+    animation: expandir 1s forwards;
+    float:right;
 }
 
-.empresa{
+.empresa {
     background-color: rgb(112, 173, 231) !important;
     left: 7vw;
     border-top-left-radius: 0;
-    animation: expandir 1s forwards 1s ;
+    animation: expandir 1s forwards 1s;
     visibility: hidden;
+    float: left;
 }
 
-.area_tempo{
+.area_tempo {
     font-size: 1vw;
     color: rgb(38, 38, 38);
     width: fit-content;
     height: 1vw;
+    top: -1vw;
 }
 
-.cliente > .area_tempo{
+.cliente>.area_tempo {
     float: right;
 }
-.empresa > .area_tempo{
+
+.empresa>.area_tempo {
     float: left;
 }
 
- @keyframes expandir {
-    from{
-        height: 1.5vw;
-        width: 0;
+@keyframes expandir {
+    from {
+        height: 2vw;
+        width: 2vw;
+        border-radius: 100%;
+        margin-right: 2vw;
+        content-visibility: hidden;
         font-display: none;
+        color: transparent;
+        transition: 1s;
     }
 
-    to{
-        content-visibility: hidden !important;
+    to {
         width: 17vw;
-        visibility: visible; 
-        font-display: none;   
+        height: fit-content;
+        visibility: visible;
     }
+}
+
+@keyframes cor{
+    from {
+        position: absolute;
+        top: 2vw;
+        left: 9vw;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        z-index: 1 !important;
+        border-radius: 100%;
+        width: 0vw ;
+        height: 0vw ;
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    to {
+        position: absolute;
+        top: 0vw;
+        left: 0vw;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        z-index: 1 !important;
+        width: 100% ;
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.fundos {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    z-index: 1 !important;
+    border-radius: 10px;
+    width: 1vw ;
+    height: 1vw;
+    visibility: hidden;
+}
+
+.fundos_ativado {
+   animation: cor 0.5s forwards;
+}
+
+.texto {
+    position: relative;
+    z-index: 2 !important;
 }
