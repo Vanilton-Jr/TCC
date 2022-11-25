@@ -6,10 +6,14 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/Thumbs.db": true,
-        ".vscode": true
+        ".vscode": true,
+        "534F5280C1B7751A9703F037103C723923547B44554D.ico": true,
+        "CNAME": true
     },
     "hide-files.files": [
-        ".vscode"
+        ".vscode",
+        "534F5280C1B7751A9703F037103C723923547B44554D.ico",
+        "CNAME"
     ],
     "liveServer.settings.port": 5501
 }

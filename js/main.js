@@ -3,29 +3,7 @@ var id_A = 0;
 var id_Atual = id_A * 1;
 var chave = 1;
 
-function cores() {
-    var color = document.getElementById("color_pick");
-    var test = document.getElementById("test_txt");
-    var fundo = document.getElementsByClassName("fundos");
-    var msg = document.getElementsByClassName("cliente");
 
-    for (var i = 0; i < fundo.length; i++) {
-        fundo[i].style.backgroundColor = color.value;
-        fundo[i].classList.add("fundos_ativado");
-    }
-    setTimeout(() => {
-      for (var i = 0; i < msg.length; i++) {
-          msg[i].style.backgroundColor = color.value;
-      }
-    }, 900);
-
-     setTimeout(() => {
-         for (var i = 0; i < fundo.length; i++) {
-             fundo[i].classList.remove("fundos_ativado");
-         }
-     }, 1900);
-
-}
 
 function renderMenssagemUsuario() {
     var msg = document.getElementById('barra_menssagem'); //le oque está escrito na barra
@@ -52,7 +30,7 @@ function adMens(remetente, conteudo) {// Create element:
     const menArea = document.createElement("div");
     menArea.classList.add("menarea");
     
-    var color = document.getElementById("color_pick");
+    var color = document.getElementById("msgCliente");
     const corpo = document.getElementById('corpo');
     const msg = document.getElementById('barra_menssagem'); //le oque está escrito na barra
     const mensagem_Cli = document.createElement("div");//Cria o div
