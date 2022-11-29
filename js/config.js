@@ -1,4 +1,3 @@
-
 function abrirjanela() {
     var butt_fec = document.getElementById("navButton_fec");
     var butt = document.getElementById("navButton");
@@ -10,16 +9,16 @@ function abrirjanela() {
     janela.classList.add("janelaAtt");
 }
 
-function fecharjanela() {
-    var butt_fec = document.getElementById("navButton_fec");
-    var butt = document.getElementById("navButton");
-    var janela = document.getElementById("janela_config");
-    janela.style.display = "none";
-    janela.classList.add("janeladAtt");
-    janela.classList.remove("janelaAtt");
-    butt.style.visibility = "visible";
-    butt_fec.style.visibility = "hidden";
-}
+// function fecharjanela() {
+//     var butt_fec = document.getElementById("navButton_fec");
+//     var butt = document.getElementById("navButton");
+//     var janela = document.getElementById("janela_config");
+//     janela.style.display = "none";
+//     janela.classList.add("janeladAtt");
+//     janela.classList.remove("janelaAtt");
+//     butt.style.visibility = "visible";
+//     butt_fec.style.visibility = "hidden";
+// }
 
 
 // CORES--------------------------------------------

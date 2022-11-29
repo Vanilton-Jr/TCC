@@ -13,7 +13,7 @@
     <title> Bot </title>
 </head>
 
-<body >
+<body>
 
     <div id="header">
         <div id="test" class="clientes hide" onclick="cores()">
@@ -56,14 +56,18 @@
                 <p id="cli_color_label" class="color_label"> Mensagem </p>
             </div>
 
-            <div id="letraCli" class="letraMen"><div id="ball"></div></div>
+            <div id="letraCli" class="letraMen">
+                <div id="ball"></div>
+            </div>
 
             <div class="area_cor">
                 <input type="color" value="#FFC300" id="msgEmpresa" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Bot </p>
             </div>
 
-            <div id="letraEmp" class="letraMen"><div id="ball"></div></div>
+            <div id="letraEmp" class="letraMen">
+                <div id="ball"></div>
+            </div>
 
             <div class="area_cor">
                 <input type="color" value="#FFC300" id="headerColor" onchange="cores()" class="color_formato">
@@ -71,15 +75,17 @@
             </div>
 
             <div class="area_cor">
-                <input type="color" value="#FFC300" id="bgColor" onchange="cores()" class="color_formato">
+                <input type="color" value="#ffffe" id="bgColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Fundo </p>
             </div>
-
         </div>
 
         <div id="backgrounds">
+            <h1 id="img_title">Imagem de Fundo</h1>
+            <hr id="img_hr">
+
             <div id="imgHeader" class="imgsArea">
-                <img src="../imgs/noImage.jpg" id="img1" class="imgShow"> 
+                <img src="../imgs/noImage.jpg" id="img1" class="imgShow">
                 <br>
                 <input id="text1" class="imgInput" type="text" alt="">
             </div>
@@ -93,15 +99,22 @@
                 <br>
                 <input id="text3" class="imgInput" type="text" alt="">
             </div>
-    </div>
+        </div>
 
-    <div id="newArrey">
-        <input id="text4" type="text" alt="">
-        <div id="pergunta" class="CaixaPerguntas"></div>
-        <button onclick="NovoQuest()" id="envie">envie</button>
-        <input id="text5" type="text" alt="">
-        <div id="resposta" class="CaixaRespostas"></div>
-    </div>
+        <div id="array_area">
+            <div class="novo_array">
+                <input id="pergunta_input" class="array_input" type="text" placeholder="Insira Uma Nova Pergunta"> <br>
+                <div id="pergunta_show" class="array_show"></div>
+            </div>
+
+            <button onclick="NovoQuest()" type="submit" id="envie">envie</button>
+
+            <div class="novo_array">
+                <input id="resposta_input" class="array_input" type="text" placeholder="Insira a Resposta">
+                <br>
+                <div id="resposta_show" class="array_show"></div>
+            </div>
+        </div>
     </div>
 </body>
 
