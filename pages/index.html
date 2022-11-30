@@ -13,7 +13,7 @@
     <title> Bot </title>
 </head>
 
-<body>
+<body onload="onload()">
 
     <div id="header">
         <div id="test" class="clientes hide" onclick="cores()">
@@ -70,12 +70,12 @@
             </div>
 
             <div class="area_cor">
-                <input type="color" value="#FFC300" id="headerColor" onchange="cores()" class="color_formato">
+                <input type="color" value="#e0a555" id="headerColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Header </p>
             </div>
 
             <div class="area_cor">
-                <input type="color" value="#ffffe" id="bgColor" onchange="cores()" class="color_formato">
+                <input type="color" value="#ffff" id="bgColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Fundo </p>
             </div>
         </div>
@@ -104,7 +104,9 @@
         <div id="array_area">
             <div class="novo_array">
                 <input id="pergunta_input" class="array_input" type="text" placeholder="Insira Uma Nova Pergunta"> <br>
-                <div id="pergunta_show" class="array_show"></div>
+                <div id="pergunta_show" class="array_show">
+                    <div class="vetor">Aspargos</div>
+                </div>
             </div>
 
             <button onclick="NovoQuest()" type="submit" id="envie">envie</button>
@@ -112,7 +114,7 @@
             <div class="novo_array">
                 <input id="resposta_input" class="array_input" type="text" placeholder="Insira a Resposta">
                 <br>
-                <div id="resposta_show" class="array_show"></div>
+                    <div id="resposta_show" class="array_show"><div class="vetor"> eca mano, aspargos é mó ruim pe vc gosta disso? mó gosto de suco aguado com mato no meio</div></div>
             </div>
         </div>
     </div>

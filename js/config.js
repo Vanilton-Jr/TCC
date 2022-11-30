@@ -36,7 +36,7 @@ function cores() {
 
     header.style.backgroundColor = colorHeader.value;
     body.style.backgroundColor = colorBack.value;
- 
+
     cores2()
 
     for (var i = 0; i < fundo.length; i++) {
@@ -65,5 +65,44 @@ function cores2() {
 
     for (var i = 0; i < msgEmp.length; i++) {
         msgEmp[i].style.backgroundColor = colorEmp.value;
+    }
+}
+
+//-----------------------Novo Questionário------------------------------------
+function NovoQuest() {
+    let pergunta = document.getElementById("pergunta_input");
+    let resposta = document.getElementById("resposta_input");
+    perguntas.push(pergunta.value);
+    respostas.push(resposta.value);
+    // console.log(perguntas);
+    // console.log(respostas);
+    pergunta.value = " ";
+    resposta.value = " ";
+    console.log(perguntas.length)
+    showQuest()
+}
+
+
+const respostas = ["oshi", "testado bão", "palhaçada",]
+const perguntas = ["hoje tem", "test", "palhaçada",]
+
+
+function showQuest() {
+
+    var corpo_per = document.getElementById('pergunta_show')
+    
+
+    for(var i = 0; i < perguntas.length;i++) {
+        const vetor_per = document.createElement("div");
+        vetor_per.classList.add("vetor")
+
+        const vtr_per_conteudo = document.createElement('p');
+        vtr_per_conteudo.innerHTML = perguntas[i];
+        
+        vetor_per.append(vtr_per_conteudo);
+        
+        corpo_per.append(vetor_per);
+        console.log(perguntas[i])
+        
     }
 }

@@ -4,6 +4,10 @@ var id_Atual = id_A * 1;
 var chave = 1;
 
 
+function onload(){
+    showQuest()
+    cores();
+}
 
 function renderMenssagemUsuario() {
     var msg = document.getElementById('barra_menssagem'); //le oque está escrito na barra
@@ -95,21 +99,6 @@ function criarPergunta(i) {
     console.log
 }
 
-const respostas = ["oshi", "testado bão", "palhaçada",]
-const perguntas = ["hoje tem", "test", "palhaçada",]
-
-
-
-function NovoQuest() {
-    let pergunta = document.getElementById("pergunta").value;
-    let resposta = document.getElementById("resposta").value;
-    perguntas.push(pergunta);
-    respostas.push(resposta);
-    console.log(perguntas);
-    console.log(respostas);
-}
-
-
 function perguntaNreconhecida() {
     var chave = Math.floor((Math.random() * 5) + 1);
     var res = "";
@@ -141,5 +130,6 @@ function pegarResposta(msg) {
             Resposta = perguntaNreconhecida();
         }
     }
+
     return Resposta;
 }

@@ -294,6 +294,11 @@ input[type="color"]::-webkit-color-swatch {
     margin-top: vw;
 }
 
-#resposta_input {}
+.vetor{
+    width: 100%;
+    height: fit-content;
+    background-color: green;
+}
 
+#resposta_input {}
 #resposta_show {}
