@@ -9,16 +9,16 @@ function abrirjanela() {
     janela.classList.add("janelaAtt");
 }
 
-// function fecharjanela() {
-//     var butt_fec = document.getElementById("navButton_fec");
-//     var butt = document.getElementById("navButton");
-//     var janela = document.getElementById("janela_config");
-//     janela.style.display = "none";
-//     janela.classList.add("janeladAtt");
-//     janela.classList.remove("janelaAtt");
-//     butt.style.visibility = "visible";
-//     butt_fec.style.visibility = "hidden";
-// }
+ function fecharjanela() {
+     var butt_fec = document.getElementById("navButton_fec");
+     var butt = document.getElementById("navButton");
+     var janela = document.getElementById("janela_config");
+     janela.style.display = "none";
+     janela.classList.add("janeladAtt");
+     janela.classList.remove("janelaAtt");
+     butt.style.visibility = "visible";
+     butt_fec.style.visibility = "hidden";
+ }
 
 
 // CORES--------------------------------------------
@@ -37,8 +37,6 @@ function cores() {
     header.style.backgroundColor = colorHeader.value;
     body.style.backgroundColor = colorBack.value;
 
-    cores2()
-
     for (var i = 0; i < fundo.length; i++) {
         fundo[i].style.backgroundColor = colorCli.value;
         fundo[i].classList.add("fundos_ativado");
@@ -50,16 +48,12 @@ function cores() {
         }
     }, 900);
 
-
     setTimeout(() => {
         for (var i = 0; i < fundo.length; i++) {
             fundo[i].classList.remove("fundos_ativado");
         }
     }, 900);
 
-}
-
-function cores2() {
     var msgEmp = document.getElementsByClassName("empresa");
     var colorEmp = document.getElementById("msgEmpresa");
 
@@ -74,35 +68,100 @@ function NovoQuest() {
     let resposta = document.getElementById("resposta_input");
     perguntas.push(pergunta.value);
     respostas.push(resposta.value);
-    // console.log(perguntas);
-    // console.log(respostas);
-    pergunta.value = " ";
-    resposta.value = " ";
-    console.log(perguntas.length)
-    showQuest()
+    console.log(perguntas);
+    console.log(respostas);
+    // pergunta.value = " ";
+    // resposta.value = " ";
+
+    addRecente()
 }
 
-
-const respostas = ["oshi", "testado bão", "palhaçada",]
-const perguntas = ["hoje tem", "test", "palhaçada",]
-
-
 function showQuest() {
-
     var corpo_per = document.getElementById('pergunta_show')
-    
+    var corpo_res = document.getElementById('resposta_show')
 
-    for(var i = 0; i < perguntas.length;i++) {
+
+    for (var i = 0; i < perguntas.length; i++) {
         const vetor_per = document.createElement("div");
         vetor_per.classList.add("vetor")
+        vetor_per.setAttribute('id',`pergunta${i}`)
 
         const vtr_per_conteudo = document.createElement('p');
         vtr_per_conteudo.innerHTML = perguntas[i];
-        
+
         vetor_per.append(vtr_per_conteudo);
-        
+
         corpo_per.append(vetor_per);
-        console.log(perguntas[i])
-        
+
     }
+    
+    for (var i = 0; i < perguntas.length; i++) {
+        const vetor_res = document.createElement("div");
+        vetor_res.classList.add("vetor")
+        vetor_res.setAttribute('id',`resposta${i}`)
+        
+        const vtr_res_conteudo = document.createElement('p');
+        vtr_res_conteudo.innerHTML = respostas[i];
+        
+        vetor_res.append(vtr_res_conteudo);
+        
+        corpo_res.append(vetor_res);
+    }
+}
+
+function addRecente() {
+    var corpo_res = document.getElementById('resposta_show')
+
+    var ip = respostas.length - 1;
+
+    const vetor_res = document.createElement("div"); 
+    vetor_res.classList.add("vetor");
+
+    const vtr_res_conteudo = document.createElement('p');
+    vtr_res_conteudo.innerHTML = respostas[ip];
+
+    vetor_res.append(vtr_res_conteudo);
+
+    corpo_res.append(vetor_res);
+
+// H------------------
+    var corpo_per = document.getElementById('pergunta_show')
+
+    var ib = (perguntas.length - 1);
+
+    const vetor_per = document.createElement("div");
+    vetor_per.classList.add("vetor");
+
+    const vtr_per_conteudo = document.createElement('p');
+    vtr_per_conteudo.innerHTML = `${perguntas[ib]}`;
+
+    vetor_per.append(vtr_per_conteudo);
+
+    corpo_per.append(vetor_per);
+
+    for (var ic = 0; ic < perguntas.length; ic++) {
+        const vetor_rese = document.getElementById(`resposta${ic}`);
+        const vetor_pere = document.getElementById(`pergunta${ic}`);
+        var perH = vetor_pere.offsetHeight;
+        var resH = vetor_rese.offsetHeight;
+
+        
+        if(perH > resH){
+            vetor_rese.style.height =  `${resH}px`;
+        }
+        
+        else if(perH < resH){
+            vetor_pere.style.height = `${resH}px`;
+        }
+
+        console.log(perH + 'px')
+        console.log(resH + 'hm')
+
+        button_element.setAttribute('onclick',`removeQuest(${i})`);
+
+    }
+}
+
+function removeQuest(){
+    
 }

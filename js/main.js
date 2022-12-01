@@ -3,7 +3,6 @@ var id_A = 0;
 var id_Atual = id_A * 1;
 var chave = 1;
 
-
 function onload(){
     showQuest()
     cores();
@@ -21,13 +20,15 @@ function renderMenssagemUsuario() {
         alert('Execedeu o limite de Characteres')
     }
 
-
 }
 
 function renderMenssagemEmpresa(msg_usuario) {
     const res = pegarResposta(msg_usuario);
     adMens('empresa', `${res}`);
 }
+
+var respostas = ["oshi", "testado bão", "palhaçada",]
+var perguntas = ["hoje tem", "test", "palhaçada",]
 
 function adMens(remetente, conteudo) {// Create element:
     id_Atual++;
@@ -76,6 +77,9 @@ function adMens(remetente, conteudo) {// Create element:
     menArea.appendChild(mensagem_Cli);
     window.scroll({ top: 90000, left: 0, behavior: 'smooth' })
     cores()// aciona a função cores
+
+    console.log(perguntas);
+    console.log(respostas);
 }
 
 function addZero(i) {
@@ -94,10 +98,6 @@ document.onkeydown = function (e) {// permite acionar a função através da tec
 
 //  ---------------------------------------RESPONDER-----------------------------------------------------
 
-function criarPergunta(i) {
-    let fnew = document.createElement('var');
-    console.log
-}
 
 function perguntaNreconhecida() {
     var chave = Math.floor((Math.random() * 5) + 1);

@@ -169,7 +169,7 @@ input[type="color"]{
 }
 
 .empresa {
-    background-color: rgb(112, 173, 231) !important;
+    background-color: rgb(112, 173, 231);
     left: 7vw;
     border-top-left-radius: 0;
     animation: expandir .8s forwards 1s;
@@ -260,4 +260,12 @@ input[type="color"]{
 .texto {
     position: relative;
     z-index: 2 !important;
+}
+
+.vetora{
+    position: absolute;
+    z-index: 5;
+    background-color: red;
+    width: 30vw;
+    height: 30vw;
 }
