@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-attachment: fixed;
+}
+
+button,
+.button {
+    cursor: pointer;
+}
+
+#butt {
+    width: 200px;
+    height: 200px;
+}
+
+.hide {
+    display: none;
+    visibility: hidden;
+}
+input[type="color"]{
+    border-radius: 100%;
+    margin-left: 5vw;
+    width: 50px;
+    height: 50px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    appearance: none;
+    background-color: transparent;
+    cursor:pointer
+}
+/* Barra de Navegação */
+#nav_butt {
+    position: fixed;
+    background-color: aliceblue;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    left: 1vw;
+    top: 1vw;
+    text-align: center;
+}
+
+#barra {
+    position: relative;
+    top: -0.2vw;
+}
+
+/* header */
+#header {
+    position: relative;
+    width: 101.55%;
+    height: 20vw;
+    top: -1vw;
+    left: -1vw;
+    right: -2vw;
+    background-color: #e0a555;
+    /* border-bottom-right-radius: 100%;
+    border-bottom-l
+    eft-radius: 100%; */
+}
+
+#perfil {
+    position: absolute;
+    width: 14vw;
+    height: 14vw;
+    background-color: grey;
+    z-index: 2;
+    top: 5vw;
+    left: 43%;
+    border-radius: 100%;
+}
+
+#test {
+    position: absolute;
+    width: 9vw;
+    height: 2vw;
+    background-color: #fff;
+    top: 5vw;
+    left: 10vw;
+    color: #000;
+}
+
+/* barra de menssagem */
+#barra_menssagem {
+    width: 50vw;
+    height: 1.5vw;
+    border-radius: 10px;
+    bottom: 3vw;
+    border: none;
+    outline: none;
+    color: #000;
+    border: 1px solid black;
+    padding-left: 1vw
+}
+
+#Barra_button {
+    position: fixed;
+    z-index: 3;
+    left: 25vw;
+    width: 55vw;
+    height: 1.5vw;
+    border-radius: 10px;
+    bottom: 3vw;
+}
+
+#enviar {
+    background-color: transparent;
+    color: #FFC300;
+    border: none;
+    outline: none;
+    transform: rotate(180deg);
+    transform: scale(1.7);
+    align-self: baseline;
+}
+
+
+#color_pick {
+    position: absolute;
+    top: 10vw;
+    outline: none;
+    border: none;
+}
+
+/* menssagens ----------------------------------------------*/
+#corpo {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: list-item;
+    margin-bottom: 7vw;
+    overflow:hidden
+}
+
+.menarea{
+    width: 100%;
+    height: 7vw;
+}
+
+.mensagem {
+    width: 2vw;
+    height: 2vw;
+    font-size: 0.85em;
+    line-height: 1.6em;
+    border-radius: 20px;
+    height: auto;
+    max-height: 7vw;
+    min-height: 2vw;
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    position: relative;
+    margin-top: 30px;
+    margin-right: 10vw;
+    word-break: break-all;
+    mix-blend-mode: isolation;
+    transition: 1s;
+}
+
+.cliente {
+    border-top-right-radius: 0;
+    animation: expandir .8s forwards;
+    float:right;
+}
+
+.empresa {
+    background-color: rgb(112, 173, 231);
+    left: 7vw;
+    border-top-left-radius: 0;
+    animation: expandir .8s forwards 1s;
+    visibility: hidden;
+    float: left;
+}
+
+.area_tempo {
+    font-size: 1vw;
+    color: rgb(38, 38, 38);
+    width: fit-content;
+    height: 1vw;
+    top: -1vw;
+}
+
+.cliente>.area_tempo {
+    float: right;
+}
+
+.empresa>.area_tempo {
+    float: left;
+}
+
+@keyframes expandir {
+    from {
+        height: 2vw;
+        width: 2vw;
+        border-radius: 100%;
+        margin-right: 2vw;
+        content-visibility: hidden;
+        font-display: none;
+        color: transparent;
+        transition: 1s;
+    }
+
+    to {
+        width: 17vw;
+        height: fit-content;
+        visibility: visible;
+    }
+}
+
+@keyframes cor{
+    from {
+        position: absolute;
+        top: 2vw;
+        left: 9vw;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        z-index: 1 !important;
+        border-radius: 100%;
+        width: 0vw ;
+        height: 0vw ;
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+    to {
+        position: absolute;
+        top: 0vw;
+        left: 0vw;
+        border-radius: 20px;
+        border-top-right-radius: 0;
+        z-index: 1 !important;
+        width: 100% ;
+        height: 100%;
+        opacity: 1;
+    }
+}
+
+.fundos {
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+    border-radius: 15px;
+    border-top-right-radius: 0;
+    z-index: 1 !important;
+    border-radius: 10px;
+    width: 1vw ;
+    height: 1vw;
+    visibility: hidden;
+}
+
+.fundos_ativado {
+   animation: cor 1s forwards;
+}
+
+.texto {
+    position: relative;
+    z-index: 2 !important;
+}
+
+.vetora{
+    position: absolute;
+    z-index: 5;
+    background-color: red;
+    width: 30vw;
+    height: 30vw;
+}
