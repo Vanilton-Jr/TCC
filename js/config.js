@@ -53,7 +53,7 @@ function cores() {
             fundo[i].classList.remove("fundos_ativado");
         }
     }, 900);
-
+ 
     var msgEmp = document.getElementsByClassName("empresa");
     var colorEmp = document.getElementById("msgEmpresa");
 
