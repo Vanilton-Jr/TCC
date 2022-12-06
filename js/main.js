@@ -71,15 +71,12 @@ function adMens(remetente, conteudo) {// Create element:
         fundo.classList.add("cliente")
         mensagem_Cli.append(fundo)
     }
+    // msg.value = "";
     
-    msg.value = "";
     corpo.appendChild(menArea)
     menArea.appendChild(mensagem_Cli);
     window.scroll({ top: 90000, left: 0, behavior: 'smooth' })
     cores()// aciona a função cores
-
-    console.log(perguntas);
-    console.log(respostas);
 }
 
 function addZero(i) {
@@ -125,8 +122,13 @@ function pegarResposta(msg) {
         if (perguntas[i].toUpperCase() == msg.toUpperCase()) {
             Resposta = respostas[i];
         }
-        if (typeof Resposta === "undefined") {
-            Resposta = perguntaNreconhecida();
+        if (typeof Resposta === "undefined" || typeof Resposta === "oi") {
+            if(questionarioRes[1] == 1){    
+                Resposta = avancarQuest();
+            }
+            else{
+                Resposta = perguntaNreconhecida();
+            }
         }
     }
 

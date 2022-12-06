@@ -248,4 +248,8 @@ function mudarFoto(id,i){
 
     obj.style.backgroundImage = `url(${src})` 
     img.src = `${src}` 
+ 
+    if(typeof img.src === 'undefined' || img.src === ' ' || img.src === 'not found' ){
+        img.src= "../imgs/noImage.jpg"
+    }
 }

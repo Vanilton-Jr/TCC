@@ -145,12 +145,10 @@ input[type="color"]{
 
 .mensagem {
     width: 2vw;
-    height: 2vw;
     font-size: 0.85em;
     line-height: 1.6em;
     border-radius: 20px;
-    height: auto;
-    max-height: 7vw;
+    height: fit-content;
     min-height: 2vw;
     background-color: #fff;
     color: #000;
