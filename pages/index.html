@@ -10,21 +10,18 @@
     <link rel="stylesheet" href="../css/folha.css">
     <script src="../js/config.js"></script>
     <link rel="stylesheet" href="../css/Config.css">
+    <script src="../js/botQuest.js"></script>
+
     <title> Bot </title>
 </head>
 
-<body onload="onload()">
+<body onload="onload()" id="body">
 
     <div id="header">
         <div id="test" class="clientes hide" onclick="cores()">
             <p id="test_txt"></p>
         </div>
-
         <div id="perfil"></div>
-        <!-- <div id="nav_butt" class="button">
-        <a href="config.html" target="_blank"> <p id="barra"> <i class="fa-solid fa-bars"></i></p></a>
-     </div> -->
-
     </div>
 
     <div id="corpo">
@@ -39,9 +36,10 @@
             onclick="renderMenssagemUsuario()" type="submit"> <i class="fa-solid fa-paper-plane"></i></button>
     </div>
 
-    <button id="navButton" class="butts" onclick="abrirjanela()"><strong>|||</strong></button>
+    <button id="navButton" class="butts" onmouseenter="abrirjanela()"><strong>|||</strong></button>
     <button id="navButton_fec" class="butts" onclick="fecharjanela()"><strong>|||</strong></button>
     <div id="janela_config" onmouseleave="fecharjanela()">
+        <!--  -->
     
         <div id="config_header">
             <h2> CONFIGURAÇÕES </h2>
@@ -55,19 +53,14 @@
                 <input type="color" value="#FFC300" id="msgCliente" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Mensagem </p>
             </div>
-
-            <div id="letraCli" class="letraMen">
-                <div id="ball"></div>
-            </div>
+                <div onclick="txtCor(1,'cliente')" class="msgButt"><input type="checkbox" id="txtCor1" class="msgBut"><div class="ball"></div></div>
 
             <div class="area_cor">
                 <input type="color" value="#70ade7" id="msgEmpresa" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Bot </p>
             </div>
+              <div onclick="txtCor(2,'empresa')" class="msgButt tcEmp"><input type="checkbox" id="txtCor2" class="msgBut"><div class="ball"></div></div>
 
-            <div id="letraEmp" class="letraMen">
-                <div id="ball"></div>
-            </div>
 
             <div class="area_cor">
                 <input type="color" value="#e0a555" id="headerColor" onchange="cores()" class="color_formato">
@@ -75,7 +68,7 @@
             </div>
 
             <div class="area_cor">
-                <input type="color" value="#ffff" id="bgColor" onchange="cores()" class="color_formato">
+                <input type="color"  value="#000000" id="bgColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Fundo </p>
             </div>
         </div>
@@ -84,20 +77,23 @@
             <h1 id="img_title">Imagem de Fundo</h1>
             <hr id="img_hr">
 
-            <div id="imgHeader" class="imgsArea">
+            <div id="imgLogo" class="imgsArea">
                 <img src="../imgs/noImage.jpg" id="img1" class="imgShow">
                 <br>
                 <input id="text1" class="imgInput" type="text" alt="">
+                <div id="img_butt" class="button" onclick="mudarFoto('perfil', 1)">enter</div>
             </div>
             <div id="imgHeader" class="imgsArea">
                 <img src="../imgs/noImage.jpg" id="img2" class="imgShow">
                 <br>
                 <input id="text2" class="imgInput" type="text" alt="">
+                <div id="img_butt" class="button" onclick="mudarFoto('header', 2)">enter</div>
             </div>
-            <div id="imgHeader" class="imgsArea">
+            <div id="imgBody" class="imgsArea">
                 <img src="../imgs/noImage.jpg" id="img3" class="imgShow">
                 <br>
                 <input id="text3" class="imgInput" type="text" alt="">
+                <div id="img_butt" class="button" onclick="mudarFoto('body', 3)">enter</div>
             </div>
         </div>
 
@@ -105,16 +101,15 @@
             <div class="novo_array">
                 <input id="pergunta_input" class="array_input" type="text" placeholder="Insira Uma Nova Pergunta"> <br>
                 <div id="pergunta_show" class="array_show">
-                    <div class="vetor">Aspargos</div>
                 </div>
             </div>
 
-            <button onclick="NovoQuest()" type="submit" id="envie">envie</button>
+            <button onclick="NovoQuest()" type="submit" id="envie">enviar</button>
 
             <div class="novo_array">
                 <input id="resposta_input" class="array_input" type="text" placeholder="Insira a Resposta">
                 <br>
-                    <div id="resposta_show" class="array_show"><div class="vetor"> eca mano, aspargos é mó ruim pe vc gosta disso? mó gosto de suco aguado com mato no meio</div></div>
+                    <div id="resposta_show" class="array_show"></div>
             </div>
         </div>
     </div>

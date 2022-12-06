@@ -4,7 +4,8 @@ var id_Atual = id_A * 1;
 var chave = 1;
 
 function onload(){
-    showQuest()
+    iniciarBot();
+    showQuest();
     cores();
 }
 
@@ -19,7 +20,7 @@ function renderMenssagemUsuario() {
     if (msg.value.length >= 199) {
         alert('Execedeu o limite de Characteres')
     }
-
+    msg.value = "";
 }
 
 function renderMenssagemEmpresa(msg_usuario) {
@@ -71,15 +72,17 @@ function adMens(remetente, conteudo) {// Create element:
         fundo.classList.add("cliente")
         mensagem_Cli.append(fundo)
     }
+
+
     
-    msg.value = "";
+    window.scroll({ top:mensagem_Cli.offsetTop + 5, left: 0, behavior: 'smooth' })
+    
+    console.log()
+    
     corpo.appendChild(menArea)
     menArea.appendChild(mensagem_Cli);
-    window.scroll({ top: 90000, left: 0, behavior: 'smooth' })
+    area_tempo
     cores()// aciona a função cores
-
-    console.log(perguntas);
-    console.log(respostas);
 }
 
 function addZero(i) {
@@ -117,7 +120,6 @@ function perguntaNreconhecida() {
     return res;
 }
 
-
 function pegarResposta(msg) {
     var Resposta;
     let i = -1;
@@ -127,7 +129,15 @@ function pegarResposta(msg) {
             Resposta = respostas[i];
         }
         if (typeof Resposta === "undefined") {
-            Resposta = perguntaNreconhecida();
+            var msgwm = document.getElementById('barra_menssagem');
+            var msgwm = document.getElementById('barra_menssagem');
+            questionarioRes.push(`${msgwm.value}`)
+            if (questionarioRes[0] == 1 || questionarioRes[0] == 2 ){
+                Resposta = avancarQuest();
+            }
+            else{
+                Resposta = perguntaNreconhecida();
+            }
         }
     }
 
