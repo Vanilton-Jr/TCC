@@ -1,46 +1,52 @@
 var questContador = -1;
 
-let tipos =`
-     Tipo de Serviço (digite o número)
+let tipos = `
 
-     1 - Banho e Tosa
+2 - Assistência Veterinaria
+`;
 
-     2 - Assistência Veterinária
-
-     3 - Cancelar Atendimento
-    `;
-
-const questionario = [`${tipos}`, "Nome do Tutor", "Nome do Animal", "Porte", "Raça"]
+const questionario = ["Nome do Tutor", "Nome do Animal", "Porte", "Raça"]
 
 const questionarioRes = []
+
+function iniciarBot() {
+    adMens('empresa', `Selecione um tipo de serviço (digite o número correspondente)`)
+    adMens('empresa', `1 - Banho e Tosa`)
+    adMens('empresa', `2 - Assistência Veterinaria`)
+    adMens('empresa', `3 - Cancela`)
+}
 
 function avancarQuest() {
     var msg = document.getElementById('barra_menssagem');
     questContador++
     var preco = '';
+    var servico = '';
 
-
-    if (questionarioRes[1] == 1 && questionarioRes[4] == 'grande') {
-        preco = 'muito'
+    if (questionarioRes[0] == 1) {
+        servico = 'Banho e Tosa'
     }
 
-    questionarioRes.push(msg.value)
-    
-    console.log(questionarioRes[0])
+    else if (questionarioRes[0] == 2) {
+        servico = 'Assistência Veterinaria'
+    }
+
+    if (questionarioRes[0] == 1 && questionarioRes[3] == 'grande') {
+        preco = 'muito'
+    }
+    console.log(questionarioRes[questContador - 1])
 
     if (questContador <= questionario.length) {
         return questionario[questContador]
     }
     else {
+        console.log(questionarioRes)
         return `
+        ${servico}
         ${questionarioRes[1]}<br>
         ${questionarioRes[2]}<br>
         ${questionarioRes[3]}<br>
         ${questionarioRes[4]}<br>
-        ${questionarioRes[5]}<br>
         Preço: ${preco}
         `;
     }
-
-   
 }

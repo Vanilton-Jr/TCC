@@ -4,7 +4,8 @@ var id_Atual = id_A * 1;
 var chave = 1;
 
 function onload(){
-    showQuest()
+    iniciarBot();
+    showQuest();
     cores();
 }
 
@@ -19,7 +20,10 @@ function renderMenssagemUsuario() {
     if (msg.value.length >= 199) {
         alert('Execedeu o limite de Characteres')
     }
-
+    msg.value = "";
+    var body = document.querySelector("body")
+    
+    window.scroll({ top:body.offsetHeight + 10, left: 0, behavior: 'smooth' })
 }
 
 function renderMenssagemEmpresa(msg_usuario) {
@@ -41,7 +45,6 @@ function adMens(remetente, conteudo) {// Create element:
     const mensagem_Cli = document.createElement("div");//Cria o div
     mensagem_Cli.style.backgroundColor = color.value;
     
-    
     mensagem_Cli.classList.add("mensagem"); mensagem_Cli.classList.add(remetente);// adiciona a class remetente
     mensagem_Cli.setAttribute("id", `cliente${id_Atual}`);// adiciona o id cliente
     
@@ -56,14 +59,12 @@ function adMens(remetente, conteudo) {// Create element:
     const area_txt = document.createElement("div");//Cria o div
     area_txt.classList.add("texto")
     mensagem_Cli.append(area_txt);
-    
+
     const Conteudo_Txt = document.createTextNode(conteudo);
     area_txt.append(Conteudo_Txt);
     
-    
     mensagem_Cli.appendChild(area_tempo);
     area_tempo.appendChild(tempo);
-    
     
     if (remetente == "cliente") {
         const fundo = document.createElement("div");
@@ -71,11 +72,13 @@ function adMens(remetente, conteudo) {// Create element:
         fundo.classList.add("cliente")
         mensagem_Cli.append(fundo)
     }
-    // msg.value = "";
+    
+    var body = document.querySelector("body")
+    window.scroll({ top:body.offsetHeight, left: 0, behavior: 'smooth' })
     
     corpo.appendChild(menArea)
     menArea.appendChild(mensagem_Cli);
-    window.scroll({ top: 90000, left: 0, behavior: 'smooth' })
+    area_tempo
     cores()// aciona a função cores
 }
 
@@ -122,8 +125,11 @@ function pegarResposta(msg) {
         if (perguntas[i].toUpperCase() == msg.toUpperCase()) {
             Resposta = respostas[i];
         }
-        if (typeof Resposta === "undefined" || typeof Resposta === "oi") {
-            if(questionarioRes[1] == 1){    
+        if (typeof Resposta === "undefined") {
+            var msgwm = document.getElementById('barra_menssagem');
+            var msgwm = document.getElementById('barra_menssagem');
+            questionarioRes.push(`${msgwm.value}`)
+            if (questionarioRes[0] == 1 || questionarioRes[0] == 2 ){
                 Resposta = avancarQuest();
             }
             else{

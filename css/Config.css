@@ -184,7 +184,7 @@ top: 22vw !important;
     left: 170px;
     width: 50vw;
     height: fit-content !important;
-    /* display: none; */
+    display: none;
     background-color: rgb(28, 34, 36);
     color: white;
     font-family: Calibri, 'Trebuchet MS', sans-serif;

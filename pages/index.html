@@ -21,9 +21,7 @@
         <div id="test" class="clientes hide" onclick="cores()">
             <p id="test_txt"></p>
         </div>
-
         <div id="perfil"></div>
-
     </div>
 
     <div id="corpo">
@@ -38,7 +36,7 @@
             onclick="renderMenssagemUsuario()" type="submit"> <i class="fa-solid fa-paper-plane"></i></button>
     </div>
 
-    <button id="navButton" class="butts" onclick="abrirjanela()"><strong>|||</strong></button>
+    <button id="navButton" class="butts" onmouseenter="abrirjanela()"><strong>|||</strong></button>
     <button id="navButton_fec" class="butts" onclick="fecharjanela()"><strong>|||</strong></button>
     <div id="janela_config" onmouseleave="fecharjanela()">
         <!--  -->
@@ -70,7 +68,7 @@
             </div>
 
             <div class="area_cor">
-                <input type="color"  value="#ffff" id="bgColor" onchange="cores()" class="color_formato">
+                <input type="color"  value="#000000" id="bgColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Fundo </p>
             </div>
         </div>

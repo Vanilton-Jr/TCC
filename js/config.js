@@ -70,8 +70,6 @@ function NovoQuest() {
     respostas.push(resposta.value);
     console.log(perguntas);
     console.log(respostas);
-    // pergunta.value = " ";
-    // resposta.value = " ";
 
     addRecente()
 }
@@ -120,6 +118,12 @@ function showQuest() {
 }
 
 function addRecente() {
+    let pergunta = document.getElementById("pergunta_input");
+    let resposta = document.getElementById("resposta_input");
+    
+    pergunta.value = "";
+    resposta.value = "";
+
     var corpo_res = document.getElementById('resposta_show')
 
     var ip = respostas.length - 1;
