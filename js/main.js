@@ -21,6 +21,9 @@ function renderMenssagemUsuario() {
         alert('Execedeu o limite de Characteres')
     }
     msg.value = "";
+    var body = document.querySelector("body")
+    
+    window.scroll({ top:body.offsetHeight + 10, left: 0, behavior: 'smooth' })
 }
 
 function renderMenssagemEmpresa(msg_usuario) {
@@ -42,7 +45,6 @@ function adMens(remetente, conteudo) {// Create element:
     const mensagem_Cli = document.createElement("div");//Cria o div
     mensagem_Cli.style.backgroundColor = color.value;
     
-    
     mensagem_Cli.classList.add("mensagem"); mensagem_Cli.classList.add(remetente);// adiciona a class remetente
     mensagem_Cli.setAttribute("id", `cliente${id_Atual}`);// adiciona o id cliente
     
@@ -57,14 +59,12 @@ function adMens(remetente, conteudo) {// Create element:
     const area_txt = document.createElement("div");//Cria o div
     area_txt.classList.add("texto")
     mensagem_Cli.append(area_txt);
-    
+
     const Conteudo_Txt = document.createTextNode(conteudo);
     area_txt.append(Conteudo_Txt);
     
-    
     mensagem_Cli.appendChild(area_tempo);
     area_tempo.appendChild(tempo);
-    
     
     if (remetente == "cliente") {
         const fundo = document.createElement("div");
@@ -72,12 +72,9 @@ function adMens(remetente, conteudo) {// Create element:
         fundo.classList.add("cliente")
         mensagem_Cli.append(fundo)
     }
-
-
     
-    window.scroll({ top:mensagem_Cli.offsetTop + 5, left: 0, behavior: 'smooth' })
-    
-    console.log()
+    var body = document.querySelector("body")
+    window.scroll({ top:body.offsetHeight, left: 0, behavior: 'smooth' })
     
     corpo.appendChild(menArea)
     menArea.appendChild(mensagem_Cli);

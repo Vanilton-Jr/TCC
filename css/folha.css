@@ -144,36 +144,41 @@ input[type="color"]{
 }
 
 .mensagem {
-    width: 2vw;
+    width:2vw;
     font-size: 0.85em;
     line-height: 1.6em;
-    border-radius: 20px;
-    height: fit-content;
+    border-radius: 100%;
+    height: fit-content; 
     min-height: 2vw;
     background-color: #fff;
     color: #000;
     padding: 20px;
     position: relative;
-    margin-top: 30px;
+    margin-top: 0px;
     margin-right: 10vw;
-    word-break: break-all;
-    mix-blend-mode: isolation;
-    transition: 1s;
+    transition: 0s;
+    max-height: 1vw;
 }
 
 .cliente {
-    border-top-right-radius: 0;
+    border-top-right-radius: 0 !important;
     animation: expandir .8s forwards;
     float:right;
 }
 
 .empresa {
-    background-color: rgb(112, 173, 231);
+    border-top-left-radius: 0 !important;
     left: 7vw;
-    border-top-left-radius: 0;
+    margin-right: 100%;
     animation: expandir .8s forwards 1s;
     visibility: hidden;
     float: left;
+}
+
+.texto {
+    position: relative;
+    z-index: 2 !important;
+    animation: aparecer 1s forwards;
 }
 
 .area_tempo {
@@ -186,28 +191,53 @@ input[type="color"]{
 
 .cliente>.area_tempo {
     float: right;
+    animation: aparecer 1s forwards;
 }
 
 .empresa>.area_tempo {
     float: left;
 }
 
+@keyframes moverEmp {
+    from{
+        left: 2vw;
+    }
+    to{
+        left: 8vw;
+    }
+}
+
 @keyframes expandir {
     from {
-        height: 2vw;
+        height: fit-content;
         width: 2vw;
-        border-radius: 100%;
+        border-radius: 20px;
         margin-right: 2vw;
         content-visibility: hidden;
         font-display: none;
         color: transparent;
         transition: 1s;
+        max-height: 1vw;
+        overflow: hidden;
     }
 
     to {
-        width: 17vw;
+        width: 20vw;
         height: fit-content;
         visibility: visible;
+        border-radius: 20px;
+        max-height:10vw;
+    }
+}
+
+@keyframes aparecer {
+    from{
+   
+     
+    }
+    to{
+        
+        
     }
 }
 
@@ -256,15 +286,11 @@ input[type="color"]{
    animation: cor 1s forwards;
 }
 
-.texto {
-    position: relative;
-    z-index: 2 !important;
-}
 
 .vetora{
     position: absolute;
     z-index: 5;
-    background-color: red;
+    background-color: rgb(255, 0, 0);
     width: 30vw;
     height: 30vw;
 }

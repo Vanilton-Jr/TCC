@@ -92,7 +92,7 @@ function showQuest() {
         corpo_per.append(vetor_per);
 
         const del = document.createElement("div");
-        del.classList.add("del")
+        del.classList.add("del","gButt")
         del.setAttribute('id', `del${i}`)
         del.innerHTML = "Remover"
 
@@ -158,7 +158,8 @@ function addRecente() {
 
 
     const del = document.createElement("div");
-    del.classList.add("del")
+    del.classList.add("del","gButt")
+
     del.setAttribute('id', `del${ib}`)
     del.innerHTML = "Remover"
 
@@ -256,4 +257,10 @@ function mudarFoto(id,i){
     if(typeof img.src === 'undefined' || img.src === ' ' || img.src === 'not found' ){
         img.src= "../imgs/noImage.jpg"
     }
+}
+
+
+function definirEmail(){
+    var emailV = document.getElementById("email_input").value;
+    email = emailV
 }

@@ -184,7 +184,7 @@ top: 22vw !important;
     left: 170px;
     width: 50vw;
     height: fit-content !important;
-    display: none;
+    /* display: none; */
     background-color: rgb(28, 34, 36);
     color: white;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
@@ -278,12 +278,50 @@ top: 22vw !important;
     margin-top: -1vw;
 }
 
+ /* Selecionar Email */
+
+ #email_area{
+    position: relative;
+    background-color: #414040;
+    border-top: 1px solid black ;
+    border-bottom: 1px solid black ;
+    height: 3vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -30vw;
+ }
+
+ #email_input{
+    position: relative;
+    width: 25vw;
+    height: 1.5vw;
+}
+
+.email_envi{
+    position: relative;
+    width: 3.8vw;
+    height: 1.3vw;
+    margin-left: 1vw;
+    border: none;
+    outline: none;
+    background-color: rgb(47, 255, 144);
+    font-size: smaller xx-small;
+}
+
+.gButt:hover{
+    transform: scale(1.1);
+    color: white;
+}
+
+
 /* Novos Arrays */
 
 #array_area {
     position: relative;
     width: 100%;
-    top: -30vw;
+    top: -24vw;
     display: inline-flex;
     flex-direction: row;
     align-items: center;

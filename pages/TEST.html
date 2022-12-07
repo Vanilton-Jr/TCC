@@ -1,57 +1,21 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d64eeea4e.js" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/folha.css">
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="../css/Config.css">
+    <script src="../js/botQuest.js"></script>
+    <script src="../js/teste.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+</head>
 <body>
-    <script>
-        const respostas = ["oshi", "testado bão", "palhaçada"]
-        const perguntas = ["hoje tem", "test", "palhaçada"]
 
-        var str1 = "ola tudo bem";
-        var str2 = "olá todo ben";
-
-        function pegarResposta(msg) {
-            var Resposta;
-            let i = -1;
-            while (i < respostas.length - 1) {
-                i++;
-                if (perguntas[i].toUpperCase() == msg.toUpperCase()) {
-                    Resposta = respostas[i];
-                }
-                if (typeof Resposta === "undefined") {
-                    Resposta = perguntaNreconhecida();
-                }
-            }
-            return Resposta;
-        }
-
-        s1 = str1.split('');
-
-        s2 = str2.split('');
-
-        var i = s1.length + 1;
-        while (i--) {
-            if (s2.indexOf(s1[i]) >= 0)
-                s2.splice(s2.indexOf(s1[i]), 1);
-        }
-
-        console.log(s2)
-        function getDifference(a, b) {
-            var i = 0;
-            var j = 0;
-            var result = "";
-
-            while (j < b.length) {
-                if (a[i] != b[j] || i == a.length)
-                    result += b[j];
-                else
-                    i++;
-                j++;
-            }
-            return result;
-        }
-
-        console.log(getDifference("lebronjames", "lebronnjames"));
-    </script>
-</body>
+    <button onclick="errorModal('clrbrt')"></button>
+</body> 
 
 </html>

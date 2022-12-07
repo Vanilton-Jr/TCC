@@ -11,7 +11,7 @@
     <script src="../js/config.js"></script>
     <link rel="stylesheet" href="../css/Config.css">
     <script src="../js/botQuest.js"></script>
-
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title> Bot </title>
 </head>
 
@@ -96,6 +96,10 @@
                 <div id="img_butt" class="button" onclick="mudarFoto('body', 3)">enter</div>
             </div>
         </div>
+        
+        <form action="" id="email_area">
+            <input id="email_input" placeholder="Insira um email para receber os pedidos" type="text" class=""> <button type="submit" class="email_envi gButt"> ENVIAR</button>
+        </form>
 
         <div id="array_area">
             <div class="novo_array">
@@ -104,7 +108,7 @@
                 </div>
             </div>
 
-            <button onclick="NovoQuest()" type="submit" id="envie">enviar</button>
+            <button onclick="NovoQuest()" type="submit" id="envie" class="gButt">enviar</button>
 
             <div class="novo_array">
                 <input id="resposta_input" class="array_input" type="text" placeholder="Insira a Resposta">
