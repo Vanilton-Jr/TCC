@@ -196,7 +196,6 @@ function addRecente() {
     del.classList.add("del", "gButt")
 
     del.setAttribute('id', `del${ib}`)
-    del.innerHTML = "Remover"
 
 
     del.setAttribute('onclick', `removeQuest(${ib})`)
