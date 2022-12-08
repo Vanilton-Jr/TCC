@@ -10,11 +10,6 @@ function onload(){
     cores();
 }
 
-
-function myFunction_set() {
-
-}
-
 function renderMenssagemUsuario() {
     var msg = document.getElementById('barra_menssagem'); //le oque está escrito na barra
     if (msg.value.length >= 1 && msg.value.length <= 199) {
