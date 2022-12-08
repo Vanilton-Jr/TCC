@@ -1,9 +1,5 @@
 var questContador = -1;
 var email='';
-let tipos = `
-
-2 - Assistência Veterinaria
-`;
 
 const questionario = ["Nome do Tutor", "Nome do Animal", "Porte", "Raça"]
 
@@ -42,13 +38,13 @@ function avancarQuest() {
     }
 
     else {
-        Email.send({
-            SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
-            To : email,
-            From : email,
-            Subject : "Novo Pedido",
-            Body : tudo 
-        }).then();
+        // Email.send({
+        //     SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
+        //     To : email,
+        //     From : email,
+        //     Subject : "Novo Pedido",
+        //     Body : tudo 
+        // }).then();
 
         console.log(questionarioRes)
         return `

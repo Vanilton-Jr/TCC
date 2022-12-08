@@ -20,7 +20,6 @@ function fecharjanela() {
     butt_fec.style.visibility = "hidden";
 }
 
-
 // CORES--------------------------------------------
 function cores() {
     var colorCli = document.getElementById("msgCliente");
@@ -32,6 +31,9 @@ function cores() {
 
     var body = document.querySelector("body");
     var colorBack = document.getElementById("bgColor");
+
+    var r = document.querySelector(':root');
+    r.style.setProperty('--body', `${colorBack.value}`);
 
 
     header.style.backgroundColor = colorHeader.value;
@@ -53,7 +55,7 @@ function cores() {
             fundo[i].classList.remove("fundos_ativado");
         }
     }, 900);
- 
+
     var msgEmp = document.getElementsByClassName("empresa");
     var colorEmp = document.getElementById("msgEmpresa");
 
@@ -68,11 +70,15 @@ function NovoQuest() {
     let resposta = document.getElementById("resposta_input");
     perguntas.push(pergunta.value);
     respostas.push(resposta.value);
-    console.log(perguntas);
-    console.log(respostas);
-
     addRecente()
 }
+
+function NovoNQuest() {
+    let input = document.getElementById("quest_input");
+    questionario.push(input.value);
+    addNRecente()
+}
+
 
 function showQuest() {
     var corpo_per = document.getElementById('pergunta_show')
@@ -92,9 +98,9 @@ function showQuest() {
         corpo_per.append(vetor_per);
 
         const del = document.createElement("div");
-        del.classList.add("del","gButt")
+        del.classList.add("del", "gButt")
         del.setAttribute('id', `del${i}`)
-        del.innerHTML = "Remover"
+        
 
         del.setAttribute('onclick', `removeQuest(${i})`)
         del.setAttribute('onmouseenter', `selecDel(${i})`)
@@ -117,10 +123,39 @@ function showQuest() {
     }
 }
 
+function showNQuest() {
+    var corpo_quest = document.getElementById('quest_show')
+
+    for (var i = 0; i < questionario.length; i++) {
+        const vetor = document.createElement("div");
+        vetor.classList.add("vetorN")
+        vetor.setAttribute('id', `quest${i}`)
+
+        const vtr_conteudo = document.createElement('p');
+        vtr_conteudo.innerHTML = questionario[i];
+
+        vetor.append(vtr_conteudo);
+
+        corpo_quest.append(vetor);
+
+        const del = document.createElement("div");
+        del.classList.add("delN", "gButt")
+        del.setAttribute('id', `delN${i}`)
+        del.innerHTML = "Remover"
+
+        del.setAttribute('onclick', `removeNQuest(${i})`)
+        del.setAttribute('onmouseenter', `selecNDel(${i})`)
+        del.setAttribute('onmouseleave', `deselecNDel(${i})`)
+
+        corpo_quest.append(del)
+    }
+
+}
+
 function addRecente() {
     let pergunta = document.getElementById("pergunta_input");
     let resposta = document.getElementById("resposta_input");
-    
+
     pergunta.value = "";
     resposta.value = "";
 
@@ -158,10 +193,9 @@ function addRecente() {
 
 
     const del = document.createElement("div");
-    del.classList.add("del","gButt")
+    del.classList.add("del", "gButt")
 
     del.setAttribute('id', `del${ib}`)
-    del.innerHTML = "Remover"
 
 
     del.setAttribute('onclick', `removeQuest(${ib})`)
@@ -191,6 +225,38 @@ function addRecente() {
     }
 }
 
+function addNRecente() {
+    let input = document.getElementById('quest_input');
+
+    input.value = "";
+
+    var corpo = document.getElementById('quest_show')
+
+    var ip = questionario.length - 1;
+
+    const vetor = document.createElement("div");
+    vetor.setAttribute('id', `quest${ip}`)
+    vetor.classList.add("vetorN");
+
+    const vtr_conteudo = document.createElement('p');
+    vtr_conteudo.innerHTML = questionario[ip];
+
+    vetor.append(vtr_conteudo);
+
+    corpo.append(vetor);
+
+    const del = document.createElement("div");
+    del.classList.add("delN", "gButt")
+    del.setAttribute('id', `delN${ip}`)
+    del.innerHTML = "Remover"
+
+    del.setAttribute('onclick', `removeNQuest(${ip})`)
+    del.setAttribute('onmouseenter', `selecNDel(${ip})`)
+    del.setAttribute('onmouseleave', `deselecNDel(${ip})`)
+    
+    corpo.append(del)
+}
+
 function removeQuest(i) {
     var res = document.getElementById(`resposta${i}`)
     var per = document.getElementById(`pergunta${i}`)
@@ -200,15 +266,30 @@ function removeQuest(i) {
     per.remove();
     but.remove();
 
-    const index1 = respostas.indexOf(respostas[i]);
+    const index1 = respostas.indexOf(res.innerText);
     if (index1 > -1) { // only splice array when item is found
         respostas.splice(index1, 1); // 2nd parameter means remove one item only
     }
-    const index2 = perguntas.indexOf(perguntas[i]);
+    const index2 = perguntas.indexOf(per.innerText);
     if (index2 > -1) { // only splice array when item is found
         perguntas.splice(index2, 1); // 2nd parameter means remove one item only
     }
+}
 
+function removeNQuest(i) {
+    var que = document.getElementById(`quest${i}`)
+    var but = document.getElementById(`delN${i}`)
+
+    que.remove();
+    but.remove();
+
+
+
+    const index1 = questionario.indexOf(que.innerText);
+    if (index1 > -1) { // only splice array when item is found
+        questionario.splice(index1, 1); // 2nd parameter means remove one item only
+    }
+    console.log(questionario)
 }
 
 function selecDel(i) {
@@ -217,6 +298,16 @@ function selecDel(i) {
 
     res.style.backgroundColor = "rgb(255, 32, 69)";
     per.style.backgroundColor = "rgb(255, 32, 69)";
+}
+
+function selecNDel(i) {
+    var que = document.getElementById(`quest${i}`)
+    que.style.backgroundColor = "rgb(255, 32, 69)";
+}
+
+function deselecNDel(i) {
+    var que = document.getElementById(`quest${i}`)
+    que.style.backgroundColor = "rgb(70, 70, 228)";
 }
 
 function deselecDel(i) {
@@ -243,7 +334,7 @@ function txtCor(n, objeto) {
     }
 }
 
-function mudarFoto(id,i){
+function mudarFoto(id, i) {
     var obj = document.getElementById(id);
     var src = document.getElementById(`text${i}`).value;
     var img = document.getElementById(`img${i}`);
@@ -251,16 +342,16 @@ function mudarFoto(id,i){
 
     obj.classList.add("fotinha");
 
-    obj.style.backgroundImage = `url(${src})` 
-    img.src = `${src}` 
- 
-    if(typeof img.src === 'undefined' || img.src === ' ' || img.src === 'not found' ){
-        img.src= "../imgs/noImage.jpg"
+    obj.style.backgroundImage = `url(${src})`
+    img.src = `${src}`
+
+    if (typeof img.src === 'undefined' || img.src === ' ' || img.src === 'not found') {
+        img.src = "../imgs/noImage.jpg"
     }
 }
 
-
-function definirEmail(){
+function definirEmail() {
     var emailV = document.getElementById("email_input").value;
-    email = emailV
+    email = emailV;
+    console.log(email)
 }

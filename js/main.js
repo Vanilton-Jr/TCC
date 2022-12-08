@@ -5,6 +5,7 @@ var chave = 1;
 
 function onload(){
     iniciarBot();
+    showNQuest();
     showQuest();
     cores();
 }

@@ -2,6 +2,31 @@
     box-sizing: border-box;
 }
 
+:root {
+    --body: #1e90ff;
+  }
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--body); 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;; 
+  }
+
 body {
     background-color: #000;
     color: #fff;
