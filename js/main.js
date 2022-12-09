@@ -116,7 +116,7 @@ function perguntaNreconhecida() {
     }
     return res;
 }
-
+ 
 function pegarResposta(msg) {
     var Resposta;
     let i = -1;

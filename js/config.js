@@ -354,4 +354,4 @@ function definirEmail() {
     var emailV = document.getElementById("email_input").value;
     email = emailV;
     console.log(email)
-}
+} 
