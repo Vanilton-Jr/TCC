@@ -184,7 +184,23 @@ top: 22vw !important;
     left: 170px;
     width: 50vw;
     height: fit-content !important;
-    /* display: none; */
+    display: none;
+    background-color: rgb(28, 34, 36);
+    color: white;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 3;
+    transform: scale(0.9);
+    box-shadow: 5px 20px 90px 20px white;
+    border-radius: 20px;
+}
+
+#janela_configB {
+    position: absolute;
+    top: -1vw;
+    left: 170px;
+    width: 50vw;
+    height: fit-content !important;
+    display: none; 
     background-color: rgb(28, 34, 36);
     color: white;
     font-family: Calibri, 'Trebuchet MS', sans-serif;

@@ -45,9 +45,10 @@ button,
 }
 
 .hide {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
+
 input[type="color"]{
     border-radius: 100%;
     margin-left: 5vw;
@@ -85,7 +86,7 @@ input[type="color"]{
     top: -1vw;
     left: -1vw;
     right: -2vw;
-    background-color: #e0a555;
+    background-color: #000000;
     /* border-bottom-right-radius: 100%;
     border-bottom-l
     eft-radius: 100%; */
@@ -189,6 +190,7 @@ input[type="color"]{
     border-top-right-radius: 0 !important;
     animation: expandir .8s forwards;
     float:right;
+    background-color: #FFC300;
 }
 
 .empresa {
@@ -197,6 +199,7 @@ input[type="color"]{
     margin-right: 100%;
     animation: expandir .8s forwards 1s;
     visibility: hidden;
+    background-color: #1e90ff;
     float: left;
 }
 

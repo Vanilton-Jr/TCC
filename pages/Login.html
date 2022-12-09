@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Meu animal-Login</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="../css/geral.css" />
+    <link rel="stylesheet" href="../css/Formulario.css" />
+  </head>
+  <body>
+   
+    <div class="container">
+      <div class="header">
+        <h2>Faça seu cadastro!</h2>
+      </div>
+
+      <div id="form" class="form">
+        <div class="form-control">
+          <label for="username">Nome do usuário</label
+          ><!--Nome de usuário/email/senha-->
+          <input
+            type="text"
+            id="username"
+            placeholder="Digite seu nome de usuário.."
+          />
+          <i class="fas fa-exclamation-circle"></i
+          ><!--ícone/figurinha de erro-->
+          <i class="fas fa-check-circle"></i
+          ><!--ícone/figurinha de sucesso-->
+          <small>Mensagem de erro</small
+          ><!--Mensagem de erro-->
+        </div>
+
+        <div class="form-control">
+          <label for="email">E-mail</label
+          ><!--Nome de usuário/email/senha-->
+          <input type="email" id="email" placeholder="Digite seu email.." />
+          <i class="fas fa-exclamation-circle"></i
+          ><!--ícone/figurinha de erro-->
+          <i class="fas fa-check-circle"></i
+          ><!--ícone/figurinha de sucesso-->
+          <small>Mensagem de erro</small
+          ><!--Mensagem de erro-->
+        </div>
+
+        <div class="form-control">
+          <label for="password">Senha</label
+          ><!--Nome de usuário/email/senha-->
+          <input type="password" id="password" placeholder="Digite sua senha.." />
+          <i class="fas fa-exclamation-circle"></i
+          ><!--ícone/figurinha de erro-->
+          <i class="fas fa-check-circle"></i
+          ><!--ícone/figurinha de sucesso-->
+          <small>Mensagem de erro</small
+          ><!--Mensagem de erro-->
+        </div>
+
+        <button onclick="passe()">Enviar</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    function passe(){
+      var  pass = ""
+      if(document.getElementById('email').value == 'vaniltonc.coelhojr@gmail.com'){
+       pass = 'index.html';
+    }
+    else{
+      pass  = 'botCliente.html';
+    }
+
+    window.location.href = pass
+  }
+  </script>
+</html>

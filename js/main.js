@@ -7,7 +7,6 @@ function onload(){
     iniciarBot();
     showNQuest();
     showQuest();
-    cores();
 }
 
 function renderMenssagemUsuario() {
@@ -32,8 +31,8 @@ function renderMenssagemEmpresa(msg_usuario) {
     adMens('empresa', `${res}`);
 }
 
-var respostas = ["oshi", "testado bão", "palhaçada",]
-var perguntas = ["hoje tem", "test", "palhaçada",]
+var perguntas = ["exemplo1", "test", "Loren",]
+var respostas = ["exemplificação1", "testado", "Ipsum",]
 
 function adMens(remetente, conteudo) {// Create element:
     id_Atual++;
@@ -108,9 +107,9 @@ function perguntaNreconhecida() {
             break;
         case 2: res = "Desculpe não entendi"
             break;
-        case 3: res = "Sabe escrever não oh"
+        case 3: res = "Confira se escreveu corretamente"
             break;
-        case 4: res = "burro?"
+        case 4: res = "???"
             break;
         case 5: res = "Não entendi a pergunta"
             break;
@@ -121,6 +120,23 @@ function perguntaNreconhecida() {
 function pegarResposta(msg) {
     var Resposta;
     let i = -1;
+    if (msg == "cancelar") {
+        Resposta = 'Pedido Cancelado';
+    }
+    if (msg == "remarcar") {
+        questionarioRes.length = 0;
+        contadorQues = 1;
+    }
+    if (msg == "cancelar" && chaveEmail == 1) {
+        Resposta = 'Pedido Cancelad';
+        // Email.send({
+        //     SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
+        //     To : email,
+        //     From : email,
+        //     Subject : "Pedido Cancelado",
+        //     Body : `${questionario[0]} cancelou o ${servico} do ${questionario[1]}`
+        // }).then();
+    }
     while (i < respostas.length - 1) {
         i++;
         if (perguntas[i].toUpperCase() == msg.toUpperCase()) {

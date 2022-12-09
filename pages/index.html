@@ -16,63 +16,85 @@
 </head>
 
 <body onload="onload()" id="body" >
-
+<!-- Header -------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------- -->
     <div id="header">
         <div id="test" class="clientes hide" onclick="cores()">
             <p id="test_txt"></p>
         </div>
+        <!-- área do perfil -->
         <div id="perfil"></div>
     </div>
 
+
+<!-- corpo  ---------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------- ---------------------------------------------------------------------------->
+
+<!-- area onde as menssagens serão inseridas através do createElemnte do main -->
     <div id="corpo">
     </div>
 
-    <div id="block">
-    </div>
 
-
+    <!-- input para inserir o valor da menssagem do cliente -->
     <div id="Barra_button">
         <input type="text" id="barra_menssagem" autofocus="autofocus" onfocus="this.select()"> <button id="enviar"
             onclick="renderMenssagemUsuario()" type="submit"> <i class="fa-solid fa-paper-plane"></i></button>
     </div>
 
-    <button id="navButton" class="butts" onmouseenter="abrirjanela()"><strong>|||</strong></button>
+
+
+<!-- Janela de Configurações --------------------------------------------------------------------------     -->
+<!-- --------------------------------------------------------------------------------------------------------->
+
+<!-- botão para abrir a janela -->
+    <button id="navButton" class="butts" onclick="abrirjanela()"><strong>|||</strong></button>
+<!-- botão para fechar a janela -->
     <button id="navButton_fec" class="butts" onclick="fecharjanela()"><strong>|||</strong></button>
+
+<!-- início da janela em sí -->
     <div id="janela_config" >
-        <!--  -->
-    
+    <!-- header da janela -->
         <div id="config_header">
             <h2> CONFIGURAÇÕES </h2>
         </div>
-
+<!-- area das cores -->
         <div id="Cores">
             <h1 id="cor_title">Mudar Cores</h1>
             <hr id="cor_hr">
 
+            <!-- define a cor de fundo das menssagens do cliente -->
             <div class="area_cor">
                 <input type="color" value="#FFC300" id="msgCliente" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Mensagem </p>
             </div>
+            <!-- define se a cor das letras do cliente vão ser brancas ou pretas -->
                 <div onclick="txtCor(1,'cliente')" class="msgButt"><input type="checkbox" id="txtCor1" class="msgBut"><div class="ball"></div></div>
 
+
+            <!-- define a cor de fundo das menssagens da empresa -->
             <div class="area_cor">
                 <input type="color" value="#70ade7" id="msgEmpresa" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Bot </p>
             </div>
+            <!-- define se a cor das letras da empresa vão ser brancas ou pretas -->
               <div onclick="txtCor(2,'empresa')" class="msgButt tcEmp"><input type="checkbox" id="txtCor2" class="msgBut"><div class="ball"></div></div>
 
 
+            <!-- define a cor de fundo do header da página -->
             <div class="area_cor">
                 <input type="color" value="#e0a555" id="headerColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Header </p>
             </div>
 
+            <!-- define a cor de fundo do do fundo da página-->
             <div class="area_cor">
                 <input type="color"  value="#000000" id="bgColor" onchange="cores()" class="color_formato">
                 <p id="cli_color_label" class="color_label"> Fundo </p>
             </div>
         </div>
 
+        
+        <!-- área das imagens -->
         <div id="backgrounds">
             <h1 id="img_title">Imagem de Fundo</h1>
             <hr id="img_hr">

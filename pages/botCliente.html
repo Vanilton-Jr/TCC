@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2d64eeea4e.js" crossorigin="anonymous"></script>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/folha.css">
+    <script src="../js/config.js"></script>
+    <link rel="stylesheet" href="../css/Config.css">
+    <script src="../js/botQuest.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <title> Bot </title>
+</head>
+
+<body onload="onload()" id="body" >
+
+    <div id="header">
+        <div id="test" class="clientes hide" onclick="cores()">
+            <p id="test_txt"></p>
+        </div>
+        <div id="perfil"></div>
+    </div>
+
+    <div id="corpo">
+    </div>
+
+    <div id="block">
+    </div>
+
+
+    <div id="Barra_button">
+        <input type="text" id="barra_menssagem" autofocus="autofocus" onfocus="this.select()"> <button id="enviar"
+            onclick="renderMenssagemUsuario()" type="submit"> <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+   
+    <div id="janela_configB" class="hide" >
+        <!--  -->
+    
+        <div id="config_header">
+            <h2> CONFIGURAÇÕES </h2>
+        </div>
+
+        <div id="Cores">
+            <h1 id="cor_title">Mudar Cores</h1>
+            <hr id="cor_hr">
+
+            <div class="area_cor">
+                <input type="color" value="#FFC300" id="msgCliente" onchange="cores()" class="color_formato">
+                <p id="cli_color_label" class="color_label"> Mensagem </p>
+            </div>
+                <div onclick="txtCor(1,'cliente')" class="msgButt"><input type="checkbox" id="txtCor1" class="msgBut"><div class="ball"></div></div>
+
+            <div class="area_cor">
+                <input type="color" value="#70ade7" id="msgEmpresa" onchange="cores()" class="color_formato">
+                <p id="cli_color_label" class="color_label"> Bot </p>
+            </div>
+              <div onclick="txtCor(2,'empresa')" class="msgButt tcEmp"><input type="checkbox" id="txtCor2" class="msgBut"><div class="ball"></div></div>
+
+
+            <div class="area_cor">
+                <input type="color" value="#e0a555" id="headerColor" onchange="cores()" class="color_formato">
+                <p id="cli_color_label" class="color_label"> Header </p>
+            </div>
+
+            <div class="area_cor">
+                <input type="color"  value="#000000" id="bgColor" onchange="cores()" class="color_formato">
+                <p id="cli_color_label" class="color_label"> Fundo </p>
+            </div>
+        </div>
+        
+       
+    </div>
+</body>
+</html>

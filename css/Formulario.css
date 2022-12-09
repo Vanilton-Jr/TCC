@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+
+
+body {
+  /*corpo da página*/
+  width: 100%;
+  min-width: 100vh;
+  background-image: url("img/Tabela\ de\ configuração.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  src: url(./fonts/FingerPaint-Regular.ttf);
+}
+
+.container {
+  /*corpo do formulário*/
+  background-color: #f8cece;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+  width: 500px;
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: 7cm;
+  transform: scale(0.9);
+  font-family: "FigerPaint";
+  line-height:normal;
+}
+
+* {
+  font-family: FigerPaint;
+}
+
+.header {
+  background-color: #f69f9f;
+  padding: 20px;
+}
+
+.form {
+  padding: 20px;
+}
+
+.form-control {
+  /*Campo de escrever formulário*/
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.form-control input {
+  border: 2px solid#f69f9f;
+  display: block;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px;
+}
+
+.form-control i {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-control small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form button {
+  background-color: #f75f5f;
+  border: 2px solid #f75f5f;
+  color: #fff;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 0.3cm;
+}
+

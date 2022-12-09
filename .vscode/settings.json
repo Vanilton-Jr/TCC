@@ -1,45 +1,11 @@
 {
-    "Logging": {
-      "LogLevel": {
-        "Default": "Information",
-        "Microsoft.AspNetCore": "Warning"
-        } 
-      },
-    "ConnectionStrings": {
-       "DBBot": "Server=ESN602N1243076\\SQLEXPRESS;Database=DBbot;User Id=sa;Password=sa;"
-    },
-    "AllowedHosts": "*",
-    "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "ESN602N1243076\\\\SQLEXPRESS",
-            "port": 3306,
-            "askForPassword": true,
-            "driver": "MySQL",
-            "name": "DBbot",
-            "database": "ESN602N1243076\\\\SQLEXPRESS",
-            "username": "sa",
-            "connectionTimeout": 15
-        }
-    ],
-    "hide-files.files": [
-      "CNAME",
-      "534F5280C1B7751A9703F037103C723923547B44554D.ico",
-      ".vscode"
-    ],
     "files.exclude": {
-      "**/.git": true,
-      "**/.svn": true,
-      "**/.hg": true,
-      "**/CVS": true,
-      "**/.DS_Store": true,
-      "**/Thumbs.db": true,
-      "CNAME": true,
-      "534F5280C1B7751A9703F037103C723923547B44554D.ico": true,
-      ".vscode": true
-    }
-  }
-  
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true
+    },
+    "hide-files.files": []
+}
