@@ -123,10 +123,6 @@ function pegarResposta(msg) {
     if (msg == "cancelar") {
         Resposta = 'Pedido Cancelado';
     }
-    if (msg == "remarcar") {
-        questionarioRes.length = 0;
-        contadorQues = 1;
-    }
     if (msg == "cancelar" && chaveEmail == 1) {
         Resposta = 'Pedido Cancelad';
         // Email.send({
