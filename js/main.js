@@ -124,14 +124,14 @@ function pegarResposta(msg) {
         Resposta = 'Pedido Cancelado';
     }
     if (msg == "cancelar" && chaveEmail == 1) {
-        Resposta = 'Pedido Cancelad';
-        // Email.send({
-        //     SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
-        //     To : email,
-        //     From : email,
-        //     Subject : "Pedido Cancelado",
-        //     Body : `${questionario[0]} cancelou o ${servico} do ${questionario[1]}`
-        // }).then();
+        Resposta = 'Pedido Cancelado';
+        //  Email.send({
+        //      SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
+        //      To : email,
+        //      From : email,
+        //      Subject : "Pedido Cancelado",
+        //      Body : `${questionario[0]} cancelou o ${servico} do ${questionario[1]}`
+        //  }).then();
     }
     while (i < respostas.length - 1) {
         i++;

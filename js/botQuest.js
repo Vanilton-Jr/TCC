@@ -1,12 +1,12 @@
 var questContador = -1;
-
-var contadorQues = 1;
-var email='';
+var email='vaniltonc.coelhojr@gmail.com';
 var chaveEmail = 0;
+
+document.writeln("<script type='text/javascript' src='https://smtpjs.com/v3/smtp.js'></script>");
 
 const questionario = ["Nome do Tutor", "Nome do Animal", "Porte", "Raça"]
  
-const questionarioRes = []
+const questionarioRes = [];
 
 function iniciarBot() {
     adMens('empresa', `Selecione um tipo de serviço (digite o número correspondente)`)
@@ -52,29 +52,31 @@ function avancarQuest() {
     console.log(questionarioRes[questContador - 1])
 
     var menssagemFinal = []
-
+    
     if (questContador <= questionario.length) {
         return questionario[questContador]
     }
-
+    
     else if (questContador == questionario.length + 1){
-        // Email.send({
-        //     SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
-        //     To : email,
-        //     From : email,
-        //     Subject : "Novo Pedido",
-        //     Body : tudo 
-        // }).then();
-
         chaveEmail = 1;
-
+        
         const tudo = [`
         ${servico};
         ${menssagemFinal};
         Preço:${preco}
         `];
-    
-        for (let i = contadorQues; i < questionarioRes.length -1; i++) { 
+        
+        // Email.send({
+        //     SecureToken : "18c023ec-c010-4e2c-b612-cd2f7538fd55",
+        //     To : 'vaniltonc.ccoelhojr@gmail.com',
+        //     From : 'vaniltonc.coelhojr@gmail.com',
+        //     Subject : "Novo Pedido",
+        //     Body : tudo 
+        //     }).then(
+        //        message => alert(message)
+        //     ); 
+        
+        for (let i = 1; i < questionarioRes.length -1; i++) { 
             menssagemFinal.push(`${questionario[i-1]}:${questionarioRes[i]}`);    
         }
 

@@ -32,6 +32,7 @@ body {
     color: #fff;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 button,

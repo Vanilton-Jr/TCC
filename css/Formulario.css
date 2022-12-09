@@ -3,21 +3,23 @@
   margin: 0;
 } 
 
-
-
 body {
   /*corpo da página*/
   width: 100%;
   min-width: 100vh;
-  background-image: url("img/Tabela\ de\ configuração.jpg");
+  background-image: url("../imgs/Tabela\ de\ configuração.jpg");
   display: flex;
   justify-content: center;
   align-items: center;
   src: url(./fonts/FingerPaint-Regular.ttf);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
   /*corpo do formulário*/
+position: relative;
   background-color: #f8cece;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
@@ -28,6 +30,7 @@ body {
   transform: scale(0.9);
   font-family: "FigerPaint";
   line-height:normal;
+  left: 5vw;
 }
 
 * {
