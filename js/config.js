@@ -352,6 +352,6 @@ function mudarFoto(id, i) {
 
 function definirEmail() {
     var emailV = document.getElementById("email_input").value;
-    email = emailV;
+    email = emailV; 
     console.log(email)
-} 
+}  
