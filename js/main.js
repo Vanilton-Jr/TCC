@@ -123,6 +123,11 @@ function pegarResposta(msg) {
     if (msg == "cancelar") {
         Resposta = 'Pedido Cancelado';
     }
+    
+    if (msg == "reiniciar") {
+        location.reload();
+    }
+    
     if (msg == "cancelar" && chaveEmail == 1) {
         Resposta = 'Pedido Cancelado';
         //  Email.send({
