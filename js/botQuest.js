@@ -1,15 +1,18 @@
 var questContador = -1;
-var email='';
+var email='vaniltonc.coelhojr@gmail.com';
+var chaveEmail = 0;
+
+document.writeln("<script type='text/javascript' src='https://smtpjs.com/v3/smtp.js'></script>");
 
 const questionario = ["Nome do Tutor", "Nome do Animal", "Porte", "Raça"]
-
-const questionarioRes = []
+ 
+const questionarioRes = [];
 
 function iniciarBot() {
     adMens('empresa', `Selecione um tipo de serviço (digite o número correspondente)`)
     adMens('empresa', `1 - Banho e Tosa`)
     adMens('empresa', `2 - Assistência Veterinaria`)
-    adMens('empresa', `3 - Cancela`)
+    adMens('empresa', `3 - Cancelar`)
 }
 
 function avancarQuest() {
@@ -18,42 +21,68 @@ function avancarQuest() {
     var preco = '';
     var servico = '';
 
-    const tudo = [`${servico}    a ${questionarioRes[1]},    ${questionarioRes[2]},    ${questionarioRes[3]},    ${questionarioRes[4]},    Preço: ${preco}`];
-
-    if (questionarioRes[0] == 1) {
+    
+    if (questionarioRes[0] == 1 ) {
         servico = 'Banho e Tosa'
     }
-
-    else if (questionarioRes[0] == 2) {
+    if (questionarioRes[0] == 2) {
         servico = 'Assistência Veterinaria'
     }
 
     if (questionarioRes[0] == 1 && questionarioRes[3] == 'grande') {
-        preco = 'muito'
+        preco = 'R$60,00'
     }
-    console.log(questionarioRes[questContador - 1])
-
+     if (questionarioRes[0] == 1 && questionarioRes[3] == 'médio') {
+        preco = 'R$50,00'
+    }
+     if (questionarioRes[0] == 1 && questionarioRes[3] == 'pequeno') {
+        preco = 'R$40,00'
+    }
+     if (questionarioRes[0] == 2 && questionarioRes[3] == 'grande') {
+        preco = 'R$100,00'
+    }
+     if (questionarioRes[0] == 2 && questionarioRes[3] == 'médio') {
+        preco = 'R$90,00'
+    }
+     if (questionarioRes[0] == 2 && questionarioRes[3] == 'pequeno') {
+        preco = 'R$80,00'
+    }
+    
+    var menssagemFinal = []
+    
     if (questContador <= questionario.length) {
         return questionario[questContador]
     }
+    
+    else if (questContador == questionario.length + 1){
+        chaveEmail = 1;
+        
+        const tudo = [`
+        ${servico};
+        ${menssagemFinal};
+        Preço:${preco}
+        `];
+        
+       
 
-    else {
-        // Email.send({
-        //     SecureToken : "65951555-a557-42d4-9f52-cce0c6925cf8",
-        //     To : email,
-        //     From : email,
-        //     Subject : "Novo Pedido",
-        //     Body : tudo 
-        // }).then();
+        // $.ajax({
+        //     url: "/enviar_email",
+        //    context: document.body
+        //   });
+        
+        for (let i = 1; i < questionarioRes.length -1; i++) { 
+            menssagemFinal.push(`${questionario[i-1]}:${questionarioRes[i]}`);    
+        }
 
         console.log(questionarioRes)
         return `
-        ${servico}
-        ${questionarioRes[1]}
-        ${questionarioRes[2]}
-        ${questionarioRes[3]}
-        ${questionarioRes[4]}
-        Preço: ${preco}
+        ${servico};
+        ${menssagemFinal};
+        Preço:${preco}
         `;
     }
+    else{
+        return perguntaNreconhecida();
+    }
 }
+

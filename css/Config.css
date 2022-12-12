@@ -184,7 +184,23 @@ top: 22vw !important;
     left: 170px;
     width: 50vw;
     height: fit-content !important;
-    /* display: none; */
+    display: none; 
+    background-color: rgb(28, 34, 36);
+    color: white;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    z-index: 3;
+    transform: scale(0.9);
+    box-shadow: 5px 20px 90px 20px white;
+    border-radius: 20px;
+}
+
+#janela_configB {
+    position: absolute;
+    top: -1vw;
+    left: 170px;
+    width: 50vw;
+    height: fit-content !important;
+    display: none; 
     background-color: rgb(28, 34, 36);
     color: white;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
@@ -220,23 +236,24 @@ top: 22vw !important;
     animation: janela 1s reverse;
 }
 
-/* @keyframes janela {
+@keyframes janela {
     from {
     width: 1vw;
     height: 1vw;
     border: 1px solid black;
     display:none;
     border-radius: 100%;
+    overflow: hidden;
     }
 
     to {
-    width: 40vw;
-    height: 48vw;
+    width: 50vw;
+    height: fit-content;
     border: 1px solid black;
-    display:inherit;
-    border-radius: 0%;
+    display:block;
+    border-radius: 20px;
     }
-} */
+}
 
 #logo1 {
     left: 60px;
@@ -265,6 +282,7 @@ top: 22vw !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1vw;
 }
 
 .imgShow {

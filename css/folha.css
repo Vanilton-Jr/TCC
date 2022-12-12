@@ -32,6 +32,7 @@ body {
     color: #fff;
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 button,
@@ -45,9 +46,10 @@ button,
 }
 
 .hide {
-    display: none;
-    visibility: hidden;
+    display: none !important;
+    visibility: hidden !important;
 }
+
 input[type="color"]{
     border-radius: 100%;
     margin-left: 5vw;
@@ -60,6 +62,29 @@ input[type="color"]{
     background-color: transparent;
     cursor:pointer
 }
+
+#recomeco{
+position: absolute;
+width: 7vw;
+height: 2vw;
+background-color: yellow;
+color: #000;
+top: 17vw;
+right: 10vw;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: .2vw;
+transition: .5s;  
+cursor: pointer;
+}
+
+#recomeco:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px 5px rgb(255, 255, 55);
+}
+
+
 /* Barra de Navegação */
 #nav_butt {
     position: fixed;
@@ -85,7 +110,7 @@ input[type="color"]{
     top: -1vw;
     left: -1vw;
     right: -2vw;
-    background-color: #e0a555;
+    background-color: #000000;
     /* border-bottom-right-radius: 100%;
     border-bottom-l
     eft-radius: 100%; */
@@ -179,7 +204,7 @@ input[type="color"]{
     color: #000;
     padding: 20px;
     position: relative;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-right: 10vw;
     transition: 0s;
     max-height: 1vw;
@@ -189,6 +214,7 @@ input[type="color"]{
     border-top-right-radius: 0 !important;
     animation: expandir .8s forwards;
     float:right;
+    background-color: #FFC300;
 }
 
 .empresa {
@@ -197,6 +223,7 @@ input[type="color"]{
     margin-right: 100%;
     animation: expandir .8s forwards 1s;
     visibility: hidden;
+    background-color: #1e90ff;
     float: left;
 }
 

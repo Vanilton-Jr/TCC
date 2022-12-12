@@ -1,0 +1,203 @@
+body {
+  background-image: url("../imgs/Tabela\ de\ configuração.jpg");
+  background-repeat: no-repeat; 
+  background-size: 1490px 760px;;
+  width: 10%;
+  height: 10%;
+  src: url(./fonts/FingerPaint-Regular.ttf);
+ }
+
+
+ div.quatext {
+  width:700px;
+  height:260px;
+  border: 10px solid;
+  border-color: black;
+ border-radius: 105px;
+  border-style:double;
+  background-color: #F8CECE;
+  margin-top: 8cm;
+  margin-left: 10cm;
+  font-size: 25px;
+  text-align: center;
+  src: url(../imgs/body.jpg);
+  }
+
+  
+
+@font-face {
+    src: url(./fonts/FingerPaint-Regular.ttf);
+    font-family: 'FingerPaint';    
+    font-weight: normal;
+} 
+
+body{
+	font-family: FingerPaint; 
+   width: 90% !important;
+}
+
+#corpo{
+  transform: scale(.8);
+}
+
+.Login{
+   font-family:FingerPaint;
+    border-radius: 100px;
+    width:110px;
+    height:60px;
+    font-size: 15px;
+    align-items: center;
+    background-color: #FFF;
+    margin-left: 1190px;
+    position: relative;
+    top: -14.1cm;
+  
+}
+
+
+
+.Login2{
+  font-family:FingerPaint;
+  background-color: #fff;
+  width:180px;
+  height:55px;
+  border-radius: 100px;
+  font-size: 15px;
+  margin-left: 640px;
+  position: relative;
+  top: -2.5cm;
+}
+
+.Login3{
+  font-family:FingerPaint;
+  border-radius: 100px;
+  background-color: #FFF;
+  width:140px;
+  height:60px;
+  font-size: 15px;
+  align-items: center;
+  margin-left: 1310px;
+  position: relative;
+  top: -17.3cm;
+}
+ 
+header h1{
+
+  color:black ;
+  font-family: FingerPaint;
+  width:700px;
+  height:260px;
+  margin-top: 7cm;
+  margin-left: 10cm;
+  font-size: 25px;
+  text-align: center;
+}
+
+div.quatext1 {
+  width:700px;
+  height:260px;
+  border: 10px solid;
+  border-color: black;
+ border-radius: 105px;
+  border-style:double;
+  background-color: #F8CECE;
+  margin-top: -5cm;
+  margin-left: 10cm;
+  font-size: 20px;
+  text-align: center;
+  }
+
+  .LoginInicial{
+    font-family:FingerPaint;
+    border-radius: 100px;
+    width:110px;
+    height:60px;
+    font-size: 15px;
+    margin-top: -8px;
+    align-items: center;
+    background-color: #F8CECE;
+    margin-left: 37cm;
+    margin-top: -10px;
+    border-radius: 100px;
+    margin-left: 1245px;
+    position: relative;
+    top: -15cm;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/*
+section{
+  width:700px;
+  height:300px;
+  border: 10px solid;
+  border-color: black;
+ border-radius: 105px;
+  border-style:double;
+  background-color: #F8CECE;
+  margin-top: -5cm;
+  margin-left: 10cm;
+  font-size: 25px;
+  text-align: center;
+  
+
+}
+
+form{
+  font-family: FingerPaint;
+}
+
+form div{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+form input, form textarea {
+  outline: unset;
+  padding: 20px;
+  width: 500px;
+  border: 3px solid black ;
+  border-radius: 20px;
+  text-align: center;
+  margin-left: 2cm;
+  margin-top: 0.2cm;
+}
+
+form input:focus, form textarea:focus{
+  background-color: white;
+  
+}
+
+form input [type=submit]{
+  background-color: white;
+  color: #F8CECE;
+  cursor: pointer;
+}
+
+form label {
+  margin-left: 20px;
+  
+}
+
+
+
+
+  .bot{
+    font-family:FingerPaint;
+    border-radius: 100px;
+    background-color: white;
+    width:110px;
+    height:60px;
+    font-size: 15px;
+    margin-top: -8px;
+    align-items: center;
+  }
