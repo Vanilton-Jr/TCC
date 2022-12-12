@@ -124,7 +124,7 @@ function pegarResposta(msg) {
         Resposta = 'Pedido Cancelado';
     }
     
-    if (msg == "reiniciar") {
+    if (msg == "reiniciar" || msg == "recomeçar") {
         location.reload();
     }
     
